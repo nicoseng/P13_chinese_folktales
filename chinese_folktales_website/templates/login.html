@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'css/styles.css'%}">
+<body id="page-top" xmlns="http://www.w3.org/1999/html" class="test">
+<div class="container">
+    <div class="box one">
+        <img src="{% static 'images/login_tiger.png' %}" alt="login_tiger" id="login_tiger">
+    </div>
+
+    <div class="box two">
+        {% for message in messages %}
+            <h3 id="messages" class="text_align-center">{{ message }}</h3>
+        {% endfor %}
+        <div class="internal-box">
+            <h2>Se connecter</h2>
+            <form id="login-form" method="POST" action="{% url 'home' %}">
+                {% csrf_token %}
+                <div class="logo-input-block">
+                    <label for="email"><span><i class="fas fa-envelope-square"></i></span></label><br>
+                    <input type="text" id="email" name="email" placeholder="Entrez votre email"><br>
+                </div>
+                <div class="logo-input-block">
+                    <label for="password2"><span><i class="fas fa-key"></i></span></label><br>
+                    <input type="password" id="password2" name="password2" placeholder="Confirmez votre mot de passe">
+                </div>
+                <div class="button">
+                    <input class="button-input" type="submit" id="submit" name="submit" value="Connexion">
+                </div>
+            </form>
+            <p>Nouveau ? <a href="{% url 'create_account' %}">Créer un compte</a></p>
+        </div>
+    </div>
+</div>
+
+</body>
+{% endblock %}

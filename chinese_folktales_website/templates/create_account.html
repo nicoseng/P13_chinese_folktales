@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'css/styles.css'%}">
+<body id="page-top" xmlns="http://www.w3.org/1999/html" class="test">
+<div class="container">
+    <div class="box one">
+        <img src="{% static 'images/create_account_rabbit.png' %}" alt="create_account_rabbit" id="create_account_rabbit">
+    </div>
+
+    <div class="box two">
+        <div class="internal-box">
+            <h2>Créer un compte</h2>
+            <form id="login-form" method="POST" action="{% url 'create_account' %}">
+                {% csrf_token %}
+                <div class="logo-input-block">
+                    <label><span><i class="fas fa-user"></i></span></label><br>
+                    {{create_account_form.username}}
+                </div>
+                <div class="logo-input-block">
+                    <label><span><i class="fas fa-envelope-square"></i></span></label><br>
+                    {{create_account_form.email}}
+                </div>
+                <div class="logo-input-block">
+                    <span><i class="fas fa-key"></i></span>
+                    {{create_account_form.password1}}
+                </div>
+                <div class="logo-input-block">
+                    <label><span><i class="fas fa-key"></i></span></label><br>
+                    {{create_account_form.password2}}
+                </div>
+                <div class="button">
+                    <input class="button-input" type="submit" id="submit" name="submit" value="Enregistrer">
+                </div>
+            </form>
+            <p>Déjà un compte ? <a href="{% url 'login' %}">Connexion</a></p>
+        </div>
+    </div>
+</div>
+
+</body>
+{% endblock %}

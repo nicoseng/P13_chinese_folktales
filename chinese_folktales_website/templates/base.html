@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang='en'>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chinese Folktales</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+</head>
+<body>
+<section>
+    <div class="bg">
+        <nav class="navbar">
+            <header>
+                <a href="{% url 'home' %}" class="logo">Chinese Folktales</a>
+
+                <ul class="navigation">
+                    <li>
+                        <a href="{% url 'home' %}" class="icon"><ion-icon name="home"></ion-icon></a>
+                        <a href="{% url 'home' %}" class="active">Accueil</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'stories' %}" class="icon"><ion-icon name="book-sharp"></ion-icon></a>
+                        <a href="{% url 'stories' %}" class="#">Histoires</a></li>
+                    <li>
+                        <a href="{% url 'about' %}" class="icon"><ion-icon name="people"></ion-icon></a>
+                        <a href="{% url 'about' %}" class="#">A propos</a></li>
+                    <li>
+                        <a href="{% url 'contact' %}" class="icon"><ion-icon name="mail"></ion-icon></a>
+                        <a href="{% url 'contact' %}" class="#">Contact</a></li>
+                    <li>
+                        <a href="{% url 'login' %}" class="icon"><ion-icon name="person-circle-outline"></ion-icon></a>
+                        <a href="{% url 'login' %}" class="#">Se connecter</a></li>
+                </ul>
+                <img src="{% static 'images/menu.png' %}" alt="menu" class="menu-btn">
+                <img src="{% static 'images/close.png' %}" alt="menu" class="close-btn">
+            </header>
+        </nav>
+    </div>
+    {% block content %}
+
+    {% endblock %}
+</section>
+<script>
+		const menuBtn = document.querySelector(".menu-btn")
+        const navigation = document.querySelector(".navigation")
+		const closeBtn = document.querySelector(".close-btn")
+
+        menuBtn.addEventListener('click',()=>{
+        navigation.classList.toggle('mobile-menu')
+        closeBtn.classList.toggle('active')
+
+        })
+
+        closeBtn.addEventListener('click',()=>{
+        navigation.classList.remove('mobile-menu')
+        closeBtn.classList.remove('active')
+
+
+        })
+
+</script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<!--	<script>-->
+
+<!--		let menuToggle = document.querySelector('.toggle');-->
+<!--		let navigation = document.querySelector('.navigation');-->
+
+<!--		menuToggle.onclick = function(){-->
+<!--			menuToggle.classList.toggle('active');-->
+<!--			navigation.classList.toggle('active');-->
+<!--		}-->
+
+
+<!--		// change image on click-->
+<!--		function imgSlider(anything){-->
+<!--			document.querySelector('.chinese_logo').src = anything;-->
+<!--		}-->
+
+<!--		// change background color-->
+<!--		function changeBgColor(color){-->
+<!--			const bg = document.querySelector('.bg');-->
+<!--			bg.style.background = color-->
+<!--		}-->
+
+<!--		// add active class in selected thumbnails-->
+<!--		let el = document.querySelectorAll('.thumb li')-->
+<!--		for(let i = 0; i < el.length; i++){-->
+<!--			el[i].onclick = function(){-->
+<!--				var c = 0;-->
+<!--				while (c < el.length){-->
+<!--					el[c++].className = 'check';-->
+<!--				}-->
+<!--				el[i].className = 'check active';-->
+<!--			}-->
+<!--		}-->
+
+<!--	</script>-->
+<!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>-->
+<script src="{% static 'js/script.js' %}" type="text/javascript"></script>
+</body>
+</html>
