@@ -1,8 +1,65 @@
-{% extends "base.html" %}
-
+{% extends 'base.html' %}
 {% block content %}
 {% load static %}
-<div class="content">
-    Contact
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'css/styles.css'%}">
+<body id="page-top" xmlns="http://www.w3.org/1999/html" class="test">
+<div class="container">
+    <div class="box one">
+        <img src="{% static 'images/mail.png' %}" alt="panda_mail" id="panda_mail">
+    </div>
+
+    <div class="box two">
+        {% for message in messages %}
+            <h3 id="messages" class="text_align-center">{{ message }}</h3>
+        {% endfor %}
+        <div class="internal-box">
+            <h2>Laisser un message</h2>
+            <form id="login-form" method="POST" action="{% url 'home' %}">
+                {% csrf_token %}
+                <div class="logo-input-block">
+                    <textarea cols="40" rows="10" name="message" placeholder="Ecrivez votre message ici..."></textarea>
+                </div>
+                <div class="button">
+                    <input class="button-input" type="submit" id="submit" name="submit" value="Envoyer">
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
+</body>
 {% endblock %}
+<!--<section>-->
+<!--    <div>-->
+<!--        <div>-->
+<!--            <div>-->
+<!--                <h2>Contactez-nous ! </h2>-->
+<!--                <p>Envie de nous écrire ? Envoyez-nous un message et nous vous répondrons le-->
+<!--                    plus vite possible !</p>-->
+<!--                <h4>Message</h4>-->
+<!--                <form method="POST" action="">-->
+<!--                    {% csrf_token %}-->
+<!--                    <textarea cols="50" row="20" name="message" placeholder="Message..."></textarea>-->
+<!--                    <input type="submit" value="envoyer">-->
+<!--                </form>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <div>-->
+<!--                <i class="bi-phone fs-2 mb-3 text-muted"></i>-->
+<!--                <div>0123456789</div>-->
+<!--            </div>-->
+<!--            <div class="row gx-4 gx-lg-5 justify-content-center">-->
+<!--                <div class="col-lg-4 text-center mb-5 mb-lg-0">-->
+<!--                    <i class="bi-envelope fs-2 mb-3 text-muted"></i>-->
+<!--                    <div>sengmanynicolas21@gmail.com</div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->

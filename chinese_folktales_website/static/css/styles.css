@@ -147,10 +147,6 @@ header a
 	margin-left: 65px;
 }
 
-.welcome_msg
-{
-
-}
 
 .content .textBox
 {
@@ -219,10 +215,20 @@ section
 }
 
 #login_tiger
+
 {
     max-width: 80%;
     max-height:60%;
 }
+
+#panda_mail
+
+{
+    max-width: 100%;
+    max-height:60%;
+    border-radius: 10px;
+}
+
 
 .two
 {
@@ -356,6 +362,7 @@ section
 	border: 2px solid rgba(255, 255, 255, 1);
 }
 
+
 /*----------------------------Stories parameters----------------------------*/
 .card-container
 {
@@ -402,6 +409,8 @@ section
 
 
 /* ----------------------------end of stories parameters--------------------*/
+
+
 /*.thumb li::before
 {
 	position: absolute;
@@ -603,6 +612,7 @@ section
     }
 
     /* ----------------------------end of stories parameters--------------------*/
+
 }
 
 @media screen and (max-width: 900px){
@@ -621,6 +631,11 @@ section
     {
         width: 45%;
         max-height: 200%;
+    }
+
+    #panda_mail
+    {
+        width: 50%;
     }
 
     .two

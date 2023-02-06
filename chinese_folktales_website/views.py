@@ -60,3 +60,20 @@ def create_account(request):
 
 def info_user(request):
     return render(request, "info_user.html")
+
+
+@login_required(login_url='login')
+def submit_mail(request):
+    current_user = request.user
+    if request.method == "POST":
+        message = request.POST["message"]
+        send_mail(
+            'Message',
+            message,
+            current_user.email,
+            ['sengmanynicolas21@gmail.com'],
+            fail_silently=False,
+        )
+        messages.success(request, "Message bien envoyé ! ")
+
+    return render(request, 'home.html')
