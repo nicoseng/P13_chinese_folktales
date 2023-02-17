@@ -13,24 +13,73 @@
         <nav class="navbar">
             <header>
                 <a href="{% url 'home' %}" class="logo">Chinese Folktales</a>
-
                 <ul class="navigation">
                     <li>
-                        <a href="{% url 'home' %}" class="icon"><ion-icon name="home"></ion-icon></a>
-                        <a href="{% url 'home' %}" class="active">Accueil</a>
+                        <a href="{% url 'home' %}" class="icon">
+                            <ion-icon name="home"></ion-icon>
+                        </a>
+                        <a href="{% url 'home' %}" class="active">
+                            Accueil
+                        </a>
                     </li>
                     <li>
-                        <a href="{% url 'stories' %}" class="icon"><ion-icon name="book-sharp"></ion-icon></a>
-                        <a href="{% url 'stories' %}" class="#">Histoires</a></li>
+                        <a href="{% url 'stories' %}" class="icon">
+                            <ion-icon name="book-sharp"></ion-icon>
+                        </a>
+                        <a href="{% url 'stories' %}" class="#">
+                            Histoires
+                        </a>
+                    </li>
                     <li>
-                        <a href="{% url 'about' %}" class="icon"><ion-icon name="people"></ion-icon></a>
-                        <a href="{% url 'about' %}" class="#">A propos</a></li>
+                        <a href="{% url 'favorite' %}" class="icon">
+                            <ion-icon name="star"></ion-icon>
+                        </a>
+                        <a href="{% url 'favorite' %}" class="#">
+                            Mes favoris
+                        </a>
+                    </li>
                     <li>
-                        <a href="{% url 'contact' %}" class="icon"><ion-icon name="mail"></ion-icon></a>
-                        <a href="{% url 'contact' %}" class="#">Contact</a></li>
+                        <a href="{% url 'about' %}" class="icon">
+                            <ion-icon name="people"></ion-icon>
+                        </a>
+                        <a href="{% url 'about' %}" class="#">
+                            A propos
+                        </a>
+                    </li>
+
                     <li>
-                        <a href="{% url 'login' %}" class="icon"><ion-icon name="person-circle-outline"></ion-icon></a>
-                        <a href="{% url 'login' %}" class="#">Se connecter</a></li>
+                        <a href="{% url 'contact' %}" class="icon">
+                            <ion-icon name="mail"></ion-icon>
+                        </a>
+                        <a href="{% url 'contact' %}" class="#">
+                            Contact
+                        </a>
+                    </li>
+                    <li>
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'info_user' %}" class="#">
+                            <ion-icon name="person-circle"></ion-icon>
+                        </a>
+                        <a href="{% url 'info_user' %}" class="#">
+                            {{user.username}}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'logout_user' %}" class="icon">
+                            <ion-icon class="sub-menu-option-btn" name="log-out"></ion-icon>
+                        </a>
+                        <a href="{% url 'logout_user' %}" class="icon">Déconnexion</a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="{% url 'login' %}" class="#">
+                            <ion-icon name="log-in"></ion-icon>
+                        </a>
+                        <a href="{% url 'login' %}" class="#">
+                            Se connecter
+                        </a>
+                        {% endif %}
+                    </li>
                 </ul>
                 <img src="{% static 'images/menu.png' %}" alt="menu" class="menu-btn">
                 <img src="{% static 'images/close.png' %}" alt="menu" class="close-btn">
@@ -38,13 +87,16 @@
         </nav>
     </div>
     {% block content %}
-
     {% endblock %}
 </section>
+
 <script>
 		const menuBtn = document.querySelector(".menu-btn")
         const navigation = document.querySelector(".navigation")
 		const closeBtn = document.querySelector(".close-btn")
+        const subMenuBox = document.querySelector(".sub-menu")
+
+
 
         menuBtn.addEventListener('click',()=>{
         navigation.classList.toggle('mobile-menu')
@@ -56,8 +108,29 @@
         navigation.classList.remove('mobile-menu')
         closeBtn.classList.remove('active')
 
-
         })
+
+        function toggleSubMenu(){
+            subMenuBox.classList.toggle('open-menu')
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </script>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

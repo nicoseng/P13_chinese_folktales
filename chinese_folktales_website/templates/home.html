@@ -2,31 +2,30 @@
 
 {% block content %}
 {% load static %}
+
 <div class="content">
-			<div class="welcome_msg">
-				{% for message in messages %}
-				<h3>hello</h3>
-				<h3>{{ message }}</h3>
-				{% endfor %}
-			</div>
-			<div class="textBox">
-				<h2>Chinese children's stories !</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-				<a href="{% url 'stories' %}">En savoir plus</a>
-			</div>
-			<div class="imgBox">
-				<img src="{% static 'images/chinese_rabbit.png' %}" class="chinese_logo">
-			</div>
-		</div>
+    <div class="textBox">
+        <h2>Chinese children's stories !</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum</p>
+        <a href="{% url 'stories' %}">En savoir plus</a>
+    </div>
+    <div class="imgBox">
+        <img src="{% static 'images/chinese_rabbit.png' %}" class="chinese_logo">
+    </div>
+</div>
 <!--		<ul class="thumb">-->
 <!--			<li data-text="Chinese New Year" class="active"><img src="{% static 'images/chinese_rabbit.png' %}" onclick="imgSlider('chinese_rabbit.png'); changeBgColor('#fc4a55')" ></li>-->
 <!--			<li data-text="Taïwan"><img src="{% static 'images/bg_taiwan.png' %}" onclick="imgSlider('bg_taiwan.png'); changeBgColor('#ffcc02')"></li>-->
 <!--			<li data-text="Bubble tea"><img src="{% static 'images/bubble_tea.png' %}" onclick="imgSlider('bubble_tea.png'); changeBgColor('#92ba3c')"></li>-->
 <!--		</ul>-->
-		<ul class="sci">
-			<li><a href="https://fr-fr.facebook.com/"><img src="{% static 'images/facebook.png' %}"></a></li>
-			<li><a href="https://www.instagram.com/?hl=fr"><img src="{% static 'images/instagram.png' %}"></a></li>
-			<li><a href="https://twitter.com/?lang=fr"><img src="{% static 'images/twitter.png' %}"></a></li>
-			<li><a href="https://open.spotify.com/?"><img src="{% static 'images/spotify.png' %}"></a></li>
-		</ul>
+<ul class="sci">
+    <li><a href="https://fr-fr.facebook.com/"><img src="{% static 'images/facebook.png' %}"></a></li>
+    <li><a href="https://www.instagram.com/?hl=fr"><img src="{% static 'images/instagram.png' %}"></a></li>
+    <li><a href="https://twitter.com/?lang=fr"><img src="{% static 'images/twitter.png' %}"></a></li>
+    <li><a href="https://open.spotify.com/?"><img src="{% static 'images/spotify.png' %}"></a></li>
+</ul>
 {% endblock %}

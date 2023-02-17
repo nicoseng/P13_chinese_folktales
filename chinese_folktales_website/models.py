@@ -2,46 +2,39 @@ from django.contrib.auth.models import User
 from django.db import models
 
 
-# class Category(models.Model):
-#
-#     DoesExist = True
-#
-#     class Meta:
-#         ordering = ['category_id']
-#
-#     category_id = models.IntegerField(primary_key=True)
-#     category_name = models.fields.TextField(max_length=1000, null=True)
-#     category_url = models.fields.TextField(max_length=1000, null=True)
-#
-#
-# class Product(models.Model):
-#     class Meta:
-#         ordering = ['product_id']
-#
-#     category_id = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
-#     product_id = models.IntegerField(primary_key=True)
-#     product_name = models.fields.TextField(max_length=1000, null=True)
-#     product_image = models.fields.TextField(max_length=1000, null=True)
-#     product_url = models.fields.TextField(max_length=1000, null=True)
-#     product_ingredients = models.fields.TextField(max_length=1000, null=True)
-#     product_nutriscore = models.fields.TextField(max_length=1000)
-#
-#
-# class Favourite(models.Model):
-#
-#     class Meta:
-#         ordering = ['substitute_id']
-#
-#     user_id = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-#     substitute_id = models.AutoField(primary_key=True)
-#     substitute_name = models.fields.TextField(max_length=1000, null=True)
-#     substitute_image = models.fields.TextField(max_length=1000, null=True)
-#     substitute_nutriscore = models.fields.CharField(max_length=1000)
+class Level(models.Model):
+    class Meta:
+        ordering = ['level_id']
+
+    level_id = models.IntegerField(primary_key=True)
+    name = models.TextField(max_length=500, null=True)
 
 
-# class Comment(models.Model):
-#     user_id = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-#     product_id = models.ForeignKey(Product, on_delete=models.CASCADE, null=True)
-#     comment = models.TextField(max_length=500, null=True)
-#     rating = models.IntegerField(default=0, null=True)
-#     date = models.DateTimeField(auto_now_add=True)
+class Story(models.Model):
+
+    class Meta:
+        ordering = ['story_id']
+
+    story_id = models.IntegerField(primary_key=True)
+    level_id = models.ForeignKey(Level, on_delete=models.CASCADE, null=True)
+    title = models.fields.TextField(max_length=1000, null=True)
+    date = models.DateTimeField(auto_now_add=True)
+
+
+class Favourite(models.Model):
+    class Meta:
+        ordering = ['story_id']
+
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    story_id = models.ForeignKey(Story, on_delete=models.CASCADE, null=True)
+
+
+class Comment(models.Model):
+    class Meta:
+        ordering = ['story_id']
+
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    story_id = models.ForeignKey(Story, on_delete=models.CASCADE, null=True)
+    comment = models.TextField(max_length=500, null=True)
+    rating = models.IntegerField(default=0, null=True)
+    date = models.DateTimeField(auto_now_add=True)

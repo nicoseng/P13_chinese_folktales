@@ -11,12 +11,9 @@
     </div>
 
     <div class="box two">
-        {% for message in messages %}
-            <h3 id="messages" class="text_align-center">{{ message }}</h3>
-        {% endfor %}
         <div class="internal-box">
-            <h2>Laisser un message</h2>
-            <form id="login-form" method="POST" action="{% url 'home' %}">
+            <h2>Envie de nous écrire ?</h2>
+            <form id="login-form" method="POST" action="{% url 'submit_mail' %}">
                 {% csrf_token %}
                 <div class="logo-input-block">
                     <textarea cols="40" rows="10" name="message" placeholder="Ecrivez votre message ici..."></textarea>
@@ -25,6 +22,11 @@
                     <input class="button-input" type="submit" id="submit" name="submit" value="Envoyer">
                 </div>
             </form>
+            <h4>
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            </h4>
         </div>
     </div>
 </div>

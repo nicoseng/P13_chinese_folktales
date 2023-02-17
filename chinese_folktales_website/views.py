@@ -1,20 +1,24 @@
-from django.shortcuts import render
+from requests import get
 
+from django.shortcuts import render
 from django.contrib import messages
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, logout
+from django.contrib.auth import login as auth_login
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
+from django.core.mail import send_mail
 from django.utils.safestring import mark_safe
 from .forms import CreateUser
+#from .level_importer import LevelImporter
+# from .story_importer import StoryImporter
+
 
 
 def home(request):
     user = request.user
     if user is None:
         logout(request)
-        messages.success(request, 'Etat : Non connecté')
-
     return render(request, 'home.html')
 
 
@@ -25,24 +29,40 @@ def login(request):
         password = request.POST.get('password')
         user = authenticate(request, username=username, password=password)
         if user is not None:
-            login(request, user)
-            messages.success(request, 'Bienvenue sur Chinese Folktales ' + user.username + ' !')
+            auth_login(request, user)
             return redirect('home')
         else:
             messages.error(request, "Email et/ou mot de passe inconnus")
     return render(request, 'login.html')
 
 
+def logout_user(request):
+    logout(request)
+    return render(request, 'home.html')
+
+
+@login_required(login_url="login")
 def contact(request):
     return render(request, "contact.html")
 
 
 def stories(request):
+    story_imported = StoryImporter()
+    story_list = story_imported.load_story_list()
+    print(story_list)
+    a = story_imported.inject_story_in_database(story_list)
+    print(a)
+
     return render(request, "stories.html")
 
 
 def about(request):
     return render(request, "about.html")
+
+
+@login_required(login_url="login")
+def favorite(request):
+    return render(request, "favorite.html")
 
 
 def create_account(request):
@@ -58,15 +78,25 @@ def create_account(request):
     return render(request, 'create_account.html', context)
 
 
+@login_required(login_url="login")
 def info_user(request):
     return render(request, "info_user.html")
 
 
-@login_required(login_url='login')
+def change_password(request):
+    return render(request, "change_password.html")
+
+
+def edit_profile(request):
+    return render(request, "edit_profile.html")
+
+
 def submit_mail(request):
     current_user = request.user
+    print(current_user.email)
     if request.method == "POST":
         message = request.POST["message"]
+        print(message)
         send_mail(
             'Message',
             message,
@@ -76,4 +106,4 @@ def submit_mail(request):
         )
         messages.success(request, "Message bien envoyé ! ")
 
-    return render(request, 'home.html')
+    return render(request, 'contact.html')

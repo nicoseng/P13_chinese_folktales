@@ -11,20 +11,17 @@
     </div>
 
     <div class="box two">
-        {% for message in messages %}
-            <h3 id="messages" class="text_align-center">{{ message }}</h3>
-        {% endfor %}
         <div class="internal-box">
             <h2>Se connecter</h2>
-            <form id="login-form" method="POST" action="{% url 'home' %}">
+            <form id="login-form" method="POST" action="{% url 'login' %}">
                 {% csrf_token %}
                 <div class="logo-input-block">
                     <label for="email"><span><i class="fas fa-envelope-square"></i></span></label><br>
                     <input type="text" id="email" name="email" placeholder="Entrez votre email"><br>
                 </div>
                 <div class="logo-input-block">
-                    <label for="password2"><span><i class="fas fa-key"></i></span></label><br>
-                    <input type="password" id="password2" name="password2" placeholder="Confirmez votre mot de passe">
+                    <label for="password"><span><i class="fas fa-key"></i></span></label><br>
+                    <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe">
                 </div>
                 <div class="button">
                     <input class="button-input" type="submit" id="submit" name="submit" value="Connexion">
