@@ -4,8 +4,6 @@ from bs4 import BeautifulSoup
 from slugify import slugify
 import markdown
 import os
-from requests import get
-import json
 
 
 class StoryImporter:
@@ -16,16 +14,7 @@ class StoryImporter:
     @staticmethod
     def load_story_list():
 
-        stories_data = get("file:///Users/nicolassengmany/Downloads/jsonviewer.json")
-        print(stories_data)
-
-        print(type(stories_data))
-
-        res = stories_data.json()
-        print(res)
-        print(type(res))
-
-
+        stories_path = os.listdir('')
 
 
         # Pour convertir de markdown en HTML
