@@ -2,14 +2,14 @@
   {
     "title": "Grand et petit",
     "level": "débutant",
-    "bg_image": "http://placehold.it/32x32",
+    "bg_image": "https://github.com/nicoseng/P13_chinese_folktales/blob/main/chinese_folktales_website/static/images/grand_et_petit.png",
     "date": "Thu Feb 23 2023 01:59:38 GMT+0100 (heure normale d’Europe centrale)",
     "description": "Nisi duis excepteur eiusmod et nulla proident consectetur sit minim. Aliquip labore laborum id voluptate ut laborum aute aliqua nostrud dolor. Cillum velit aliquip irure excepteur qui culpa ad ad ea reprehenderit deserunt excepteur eu nisi. Est magna mollit officia velit adipisicing. Consectetur incididunt veniam velit pariatur voluptate nisi quis culpa occaecat ex. Exercitation do consequat Lorem ut ut anim elit adipisicing consectetur.\r\n"
   },
   {
     "title": "Je vois",
     "level": "débutant",
-    "bg_image": "http://placehold.it/32x32",
+    "bg_image": "https://github.com/nicoseng/P13_chinese_folktales/blob/main/chinese_folktales_website/static/images/je_vois.png",
     "date": "Thu Feb 23 2023 01:59:38 GMT+0100 (heure normale d’Europe centrale)",
     "description": "Culpa reprehenderit sunt anim dolor magna aliquip laboris irure. Ex non labore officia esse. Elit est sint quis labore esse et et aliqua nulla anim. Sit anim officia tempor nulla Lorem. Proident occaecat enim ex dolore nisi fugiat cillum sunt ad mollit.\r\n"
   },
@@ -23,14 +23,14 @@
   {
     "title": "Le singe cupide",
     "level": "intermédiaire",
-    "bg_image": "http://placehold.it/32x32",
+    "bg_image": "https://github.com/nicoseng/P13_chinese_folktales/blob/main/chinese_folktales_website/static/images/le_singe_cupide.png",
     "date": "Thu Feb 23 2023 01:59:38 GMT+0100 (heure normale d’Europe centrale)",
     "description": "Laboris quis dolore sint velit magna mollit adipisicing reprehenderit non nisi officia aute nulla. Dolore nostrud labore anim minim aliquip exercitation dolor et ea laborum enim sint minim ad. Ad minim ipsum non reprehenderit exercitation. Et exercitation nisi nulla tempor ullamco mollit est consectetur nostrud aliqua aliquip cupidatat duis.\r\n"
   },
   {
     "title": "Deux petits lapins",
     "level": "avancé",
-    "bg_image": "http://placehold.it/32x32",
+    "bg_image": "https://github.com/nicoseng/P13_chinese_folktales/blob/main/chinese_folktales_website/static/images/deux_petits_lapins.png",
     "date": "Thu Feb 23 2023 01:59:38 GMT+0100 (heure normale d’Europe centrale)",
     "description": "Consectetur Lorem dolore qui ut adipisicing esse culpa aliquip labore. Cupidatat sit ut aliquip anim dolore Lorem Lorem ut. Ullamco ea nostrud occaecat enim et reprehenderit consectetur in velit eu eu irure non consequat. Lorem labore incididunt ut velit et culpa culpa labore cupidatat. Quis nisi cupidatat sint ad adipisicing est ullamco eiusmod cillum. Consectetur occaecat nisi culpa id et excepteur eu irure qui quis nostrud. Nisi ea voluptate mollit ullamco eu eu nisi commodo dolore ullamco.\r\n"
   }
@@ -38,7 +38,7 @@
   {
     "title": "La balle perdue",
     "level": "avancé",
-    "bg_image": "http://placehold.it/32x32",
+    "bg_image": "https://github.com/nicoseng/P13_chinese_folktales/blob/main/chinese_folktales_website/static/images/la_balle_perdue.png",
     "date": "Thu Feb 23 2023 01:59:38 GMT+0100 (heure normale d’Europe centrale)",
     "description": "Consectetur Lorem dolore qui ut adipisicing esse culpa aliquip labore. Cupidatat sit ut aliquip anim dolore Lorem Lorem ut. Ullamco ea nostrud occaecat enim et reprehenderit consectetur in velit eu eu irure non consequat. Lorem labore incididunt ut velit et culpa culpa labore cupidatat. Quis nisi cupidatat sint ad adipisicing est ullamco eiusmod cillum. Consectetur occaecat nisi culpa id et excepteur eu irure qui quis nostrud. Nisi ea voluptate mollit ullamco eu eu nisi commodo dolore ullamco.\r\n"
   }
