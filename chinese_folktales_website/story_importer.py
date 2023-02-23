@@ -4,7 +4,8 @@ from bs4 import BeautifulSoup
 from slugify import slugify
 import markdown
 import os
-import requests
+from requests import get
+import json
 
 class StoryImporter:
     """
@@ -13,15 +14,12 @@ class StoryImporter:
 
     @staticmethod
     def load_story_list():
-        #
-        # stories_folder_path = "/Users/nicolassengmany/Desktop/OCR/Python/Projets/P13/chinese_folktales/chinese_folktales_website/stories/"
-        # stories_content_list = os.listdir(stories_folder_path)
-        # print(stories_content_list)
-        #
-        # for item in stories_content_list:
-        #     if item != '.DS_Store':
-        #         story_file_path = stories_folder_path + "{}".format(item)
-        #         print(story_file_path)
+
+
+
+
+
+        # Pour convertir de markdown en HTML
         #         with open(story_file_path) as story_file:
         #             # read the file
         #             read_content = story_file.read()
@@ -33,8 +31,8 @@ class StoryImporter:
         #             s = BeautifulSoup(story_html, 'html.parser')
         #             print("Voici votre résulat:", s)
 
-        res = requests.get("https://github.com/nicoseng/P13_chinese_folktales/blob/main/chinese_folktales_website/static/js/story_mini_api.json")
-        print(res)
+
+
 
         # Récupérer à partir de github (extraire les données ici)
         story_list = [
