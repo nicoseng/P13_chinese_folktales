@@ -7,6 +7,7 @@ import os
 from requests import get
 import json
 
+
 class StoryImporter:
     """
     Import Stories and insert them in the story data table.
@@ -15,7 +16,9 @@ class StoryImporter:
     @staticmethod
     def load_story_list():
 
-
+        stories_data = get("/Users/nicolassengmany/Desktop/OCR/Python/Projets/P13/chinese_folktales/chinese_folktales_website/stories/stories.json")
+        print(stories_data)
+        print(type(stories_data))
 
 
 
