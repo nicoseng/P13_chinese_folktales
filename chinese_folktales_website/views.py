@@ -10,8 +10,9 @@ from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from django.utils.safestring import mark_safe
 from .forms import CreateUser
-#from .level_importer import LevelImporter
-# from .story_importer import StoryImporter
+from .level_importer import LevelImporter
+from .story_importer import StoryImporter
+from .models import Story
 
 
 
@@ -47,13 +48,16 @@ def contact(request):
 
 
 def stories(request):
-    story_imported = StoryImporter()
-    story_list = story_imported.load_story_list()
-    print(story_list)
-    a = story_imported.inject_story_in_database(story_list)
-    print(a)
+    story_table = Story.objects.all()
+    print(story_table)
+    context = {"story_table": story_table}
+    return render(request, "stories.html", context)
 
-    return render(request, "stories.html")
+
+def story_detail(request, story_id):
+    story_id = Story.objects.get(story_id=story_id)
+    context = {"story_id": story_id}
+    return render(request, "story_detail.html", context)
 
 
 def about(request):

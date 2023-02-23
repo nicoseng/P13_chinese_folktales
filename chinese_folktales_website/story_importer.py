@@ -1,9 +1,10 @@
 from chinese_folktales_website.models import Story, Level
-from os import path
+from pathlib import Path
 from bs4 import BeautifulSoup
 from slugify import slugify
 import markdown
-
+import os
+import requests
 
 class StoryImporter:
     """
@@ -12,35 +13,41 @@ class StoryImporter:
 
     @staticmethod
     def load_story_list():
+        #
+        # stories_folder_path = "/Users/nicolassengmany/Desktop/OCR/Python/Projets/P13/chinese_folktales/chinese_folktales_website/stories/"
+        # stories_content_list = os.listdir(stories_folder_path)
+        # print(stories_content_list)
+        #
+        # for item in stories_content_list:
+        #     if item != '.DS_Store':
+        #         story_file_path = stories_folder_path + "{}".format(item)
+        #         print(story_file_path)
+        #         with open(story_file_path) as story_file:
+        #             # read the file
+        #             read_content = story_file.read()
+        #             print(read_content)
+        #
+        #             story_html = markdown.markdown(read_content)
+        #             print(story_html)
+        #
+        #             s = BeautifulSoup(story_html, 'html.parser')
+        #             print("Voici votre résulat:", s)
 
-        # open a file
-        file_path = path.relpath("/Users/nicolassengmany/Desktop/OCR/Python/Projets/P13/chinese_folktales/chinese_folktales_website/stories/兩隻小兔/兩隻小兔.md")
-        with open(file_path) as file1:
-            # read the file
-            read_content = file1.read()
-            print(read_content)
-
-        html = markdown.markdown(read_content)
-        print(html)
-
-        s = BeautifulSoup(html, 'html.parser')
-        for title in s.find_all("h1"):
-            section = s.new_tag("section")
-            section.string = title.string
-            section.attrs['id'] = slugify(title.string)
-            title.replace_with(section)
-
-        print(section)
+        res = requests.get("https://github.com/nicoseng/P13_chinese_folktales/blob/main/chinese_folktales_website/static/js/story_mini_api.json")
+        print(res)
 
         # Récupérer à partir de github (extraire les données ici)
         story_list = [
-            {"title": "H1", "level": "Débutant"},
-            {"title": "H2", "level": "Débutant+"},
-            {"title": "H3", "level": "Intermédiaire"},
-            {"title": "H4", "level": "Intermédiaire+"},
-            {"title": "H5", "level": "Avancé"},
-            {"title": "H6", "level": "Avancé+"},
-            {"title": "H7", "level": "Expert"},
+            {"title": "Grand et petit", "level": "Débutant", "bg_image": ""},
+            {"title": "Le singe cupide", "level": "Débutant+", "bg_image": "grand_et_petit.png"},
+            {"title": "Je vois", "level": "Débutant+", "bg_image": "grand_et_petit.png"},
+            {"title": "H4", "level": "Intermédiaire", "bg_image": "grand_et_petit.png"},
+            {"title": "H5", "level": "Intermédiaire+", "bg_image": "grand_et_petit.png"},
+            {"title": "Deux petits lapins", "level": "Avancé", "bg_image": "grand_et_petit.png"},
+            {"title": "H6", "level": "Avancé+", "bg_image": "grand_et_petit.png"},
+            {"title": "H7", "level": "Expert", "bg_image": "grand_et_petit.png"},
+            {"title": "H8", "level": "Expert", "bg_image": "grand_et_petit.png"},
+
         ]
         return story_list
 
@@ -51,7 +58,9 @@ class StoryImporter:
             level_id = Level.objects.get(name=element["level"]).level_id
             new_story_data = Story(
                 level_id=Level.objects.get(level_id=level_id),
-                title=element["title"])
+                title=element["title"],
+                bg_image=element["bg_image"]
+            )
             new_story_data.save()
 
     @staticmethod
@@ -76,6 +85,7 @@ class StoryImporter:
                 level_id = Level.objects.get(name=element["level"])
                 new_story_data = Story(
                     level_id=level_id,
-                    title=element["title"]
+                    title=element["title"],
+                    bg_image=element["bg_image"]
                 )
                 new_story_data.save()
