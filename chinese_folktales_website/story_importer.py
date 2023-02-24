@@ -1,9 +1,12 @@
 from chinese_folktales_website.models import Story, Level
+
 from pathlib import Path
 from bs4 import BeautifulSoup
 from slugify import slugify
 import markdown
 import os
+import json
+import requests
 
 
 class StoryImporter:
@@ -13,38 +16,11 @@ class StoryImporter:
 
     @staticmethod
     def load_story_list():
-
-        stories_path = os.listdir('')
-
-
-        # Pour convertir de markdown en HTML
-        #         with open(story_file_path) as story_file:
-        #             # read the file
-        #             read_content = story_file.read()
-        #             print(read_content)
-        #
-        #             story_html = markdown.markdown(read_content)
-        #             print(story_html)
-        #
-        #             s = BeautifulSoup(story_html, 'html.parser')
-        #             print("Voici votre résulat:", s)
-
-
-
-
-        # Récupérer à partir de github (extraire les données ici)
-        story_list = [
-            {"title": "Grand et petit", "level": "Débutant", "bg_image": ""},
-            {"title": "Le singe cupide", "level": "Débutant+", "bg_image": "grand_et_petit.png"},
-            {"title": "Je vois", "level": "Débutant+", "bg_image": "grand_et_petit.png"},
-            {"title": "H4", "level": "Intermédiaire", "bg_image": "grand_et_petit.png"},
-            {"title": "H5", "level": "Intermédiaire+", "bg_image": "grand_et_petit.png"},
-            {"title": "Deux petits lapins", "level": "Avancé", "bg_image": "grand_et_petit.png"},
-            {"title": "H6", "level": "Avancé+", "bg_image": "grand_et_petit.png"},
-            {"title": "H7", "level": "Expert", "bg_image": "grand_et_petit.png"},
-            {"title": "H8", "level": "Expert", "bg_image": "grand_et_petit.png"},
-
-        ]
+        stories_data_url = 'https://gist.githubusercontent.com/nicoseng/28a98c1a0e7025479923fab8755c8210/raw/7faff30eedd0b7e917243eb464f9f315081ed593/stories_data'
+        stories_data = requests.get(stories_data_url)
+        print(stories_data)
+        story_list = stories_data.json()
+        print(story_list)
         return story_list
 
     @staticmethod
@@ -55,7 +31,9 @@ class StoryImporter:
             new_story_data = Story(
                 level_id=Level.objects.get(level_id=level_id),
                 title=element["title"],
-                bg_image=element["bg_image"]
+                # images=element["images"],
+                audiofile=element["audiofile"],
+                textfile=element["textfile"]
             )
             new_story_data.save()
 
@@ -82,6 +60,5 @@ class StoryImporter:
                 new_story_data = Story(
                     level_id=level_id,
                     title=element["title"],
-                    bg_image=element["bg_image"]
                 )
                 new_story_data.save()

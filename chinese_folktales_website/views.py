@@ -56,6 +56,10 @@ def stories(request):
 
 def story_detail(request, story_id):
     story_id = Story.objects.get(story_id=story_id)
+    story_imported = StoryImporter()
+    textfile = story_id.textfile
+    print(textfile)
+    story_content = story_imported.openfile(textfile)
     context = {"story_id": story_id}
     return render(request, "story_detail.html", context)
 

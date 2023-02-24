@@ -10,13 +10,9 @@ class LevelImporter:
     def load_level_list():
 
         level_list = [
-            {"level": "Débutant"},
-            {"level": "Débutant+"},
-            {"level": "Intermédiaire"},
-            {"level": "Intermédiaire+"},
-            {"level": "Avancé"},
-            {"level": "Avancé+"},
-            {"level": "Expert"}
+            {"level": "Facile"},
+            {"level": "Moyen"},
+            {"level": "Difficile"}
         ]
         return level_list
 
