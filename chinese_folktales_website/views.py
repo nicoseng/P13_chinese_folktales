@@ -15,7 +15,6 @@ from .story_importer import StoryImporter
 from .models import Story
 
 
-
 def home(request):
     user = request.user
     if user is None:
@@ -56,10 +55,12 @@ def stories(request):
 
 def story_detail(request, story_id):
     story_id = Story.objects.get(story_id=story_id)
-    story_imported = StoryImporter()
-    textfile = story_id.textfile
-    print(textfile)
-    story_content = story_imported.openfile(textfile)
+    context = {"story_id": story_id}
+    return render(request, "story_detail.html", context)
+
+
+def open_audiofile(request, story_id):
+    story_id = Story.objects.get(story_id=story_id)
     context = {"story_id": story_id}
     return render(request, "story_detail.html", context)
 
@@ -67,6 +68,11 @@ def story_detail(request, story_id):
 def about(request):
     return render(request, "about.html")
 
+
+def user_directory_path(request, story_id):
+    story_id = Story.objects.get(story_id=story_id)
+    context = {"story_id": story_id}
+    return render(request, "story_detail.html", context)
 
 @login_required(login_url="login")
 def favorite(request):
