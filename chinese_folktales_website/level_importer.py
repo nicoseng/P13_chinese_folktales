@@ -12,7 +12,8 @@ class LevelImporter:
         level_list = [
             {"level": "Facile"},
             {"level": "Moyen"},
-            {"level": "Difficile"}
+            {"level": "Difficile"},
+            {"level": "Expert"},
         ]
         return level_list
 

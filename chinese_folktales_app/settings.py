@@ -125,5 +125,5 @@ EMAIL_HOST_USER = 'ccf1860bcba7f3'
 EMAIL_HOST_PASSWORD = '9b7df148695571'
 EMAIL_PORT = '2525'
 
-MEDIA_ROOT = 'stories'
-MEDIA_URL = '/stories/'
+# MEDIA_ROOT = 'stories'
+# MEDIA_URL = '/stories/'

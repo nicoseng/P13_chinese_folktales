@@ -18,9 +18,9 @@ class Story(models.Model):
     story_id = models.IntegerField(primary_key=True)
     level_id = models.ForeignKey(Level, on_delete=models.CASCADE, null=True)
     title = models.fields.TextField(max_length=1000, null=True)
-    images = models.FileField(upload_to='images/', max_length=1000, null=True)
-    textfile = models.FileField(upload_to='stories/', max_length=1000, null=True)
-    audiofile = models.FileField(upload_to='audio/', max_length=1000, null=True)
+    bg_image = models.ImageField(upload_to='images/')
+    textfile = models.fields.TextField(max_length=1000, null=True)
+    audiofile = models.fields.TextField(max_length=1000, null=True)
     date = models.DateTimeField(auto_now_add=True)
 
 

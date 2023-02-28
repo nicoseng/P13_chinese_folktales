@@ -16,9 +16,8 @@ class StoryImporter:
 
     @staticmethod
     def load_story_list():
-        stories_data_url = 'https://gist.githubusercontent.com/nicoseng/28a98c1a0e7025479923fab8755c8210/raw/467f2716e5bc3bcc2a0988c3b2d8de04c17a934e/stories_data'
+        stories_data_url = 'https://gist.githubusercontent.com/nicoseng/28a98c1a0e7025479923fab8755c8210/raw/b69301be44dfdefe5c8e5688d5bf3a83fb7130bf/stories_data'
         stories_data = requests.get(stories_data_url)
-        print(stories_data)
         story_list = stories_data.json()
         print(story_list)
         return story_list
@@ -31,9 +30,9 @@ class StoryImporter:
             new_story_data = Story(
                 level_id=Level.objects.get(level_id=level_id),
                 title=element["title"],
-                # images=element["images"],
-                audiofile="audio/" + element["audiofile"],
-                # textfile=element["textfile"]
+                bg_image=element["bg_image"],
+                audiofile=element["audiofile"],
+                textfile=element["textfile"]
             )
             new_story_data.save()
 
@@ -60,5 +59,30 @@ class StoryImporter:
                 new_story_data = Story(
                     level_id=level_id,
                     title=element["title"],
+                    bg_image=element["bg_image"],
+                    audiofile=element["audiofile"],
+                    textfile=element["textfile"]
                 )
                 new_story_data.save()
+
+    @staticmethod
+    def open_textfile(textfile_name):
+        textfile_basepath = '/Users/nicolassengmany/Desktop/OCR/Python/Projets/P13/chinese_folktales/chinese_folktales_website/stories/texts/'
+        story_file = textfile_basepath + textfile_name
+
+        with open(story_file, 'r') as story_content:
+            content = story_content.read()
+            print(content)
+
+        story_content_html = markdown.markdown(content)
+        print("résultat:", story_content_html)
+        # s = BeautifulSoup(story_content_html, "html.parser")
+        # print(s)
+        # for title in s.find_all("h1"):
+        #     h1 = s.new_tag("h1")
+        #     h1.string = title.string
+        #     h1.attrs["id"] = slugify(title.string)
+        #     title.replace_with("h1")
+
+        return story_content_html
+

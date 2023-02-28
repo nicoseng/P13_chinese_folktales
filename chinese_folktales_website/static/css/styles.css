@@ -328,6 +328,38 @@ header a
     border-bottom-left-radius: 5px;
 }
 
+.story_content
+{
+    background : lightblue;
+    width: 100%;
+    height: 50%;
+}
+
+.story_audio
+{
+    background : orange;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.story_text
+{
+    text-align: center;
+    font-size: 1.2em;
+    padding-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.audio-btn
+{
+    margin-top: 20px;
+}
+
 /*----------------------------Stories parameters----------------------------*/
 .card-container
 {

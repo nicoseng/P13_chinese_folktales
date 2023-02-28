@@ -6,17 +6,21 @@
       integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" href="{% static 'css/styles.css'%}">
 <body id="page-top" xmlns="http://www.w3.org/1999/html" class="test">
-<div class="content">
-    {{story_id}}
-    {{story_id.title}}
-    {{story_id.textfile}}
-    {{story_id.date}}
-    {{story_id.level_id.name}}
-    <a href="stories/{{story_id.audiofile}}">{{story_id.audiofile}}</a>
-    <audio controls>
-  <source src="stories/{{story_id.audiofile}}" type="audio/ogg">
-  <source src="/Users/nicolassengmany/Desktop/OCR/Python/Projets/P13/chinese_folktales/chinese_folktales_website/stories/audio/je_vois.mp3" type="audio/mpeg">
-Your browser does not support the audio element.
-</audio>
+<div class="story_content">
+    {{story_id.bg_image}}
+    <!--        <div class="story_audio" style="background-image:url('{% static 'images/login_tiger.png'%}')">-->
+    <div class="story_audio" style="background-image:url('{% static 'images/ + {{story_id.bg_image}}'%}')">
+        <h1>{{story_id.title}}</h1>
+        <audio class="audio-btn" controls autoplay muted>
+            <source src="/Users/nicolassengmany/Desktop/OCR/Python/Projets/P13/chinese_folktales/chinese_folktales_website/stories/audio/{{story_id.audiofile}}"
+                    type="audio/mpeg">
+        </audio>
+    </div>
+    <div class="story_text">
+        {{textfile | safe}}
+    </div>
+    <div class="story_image">
+
+    </div>
 </div>
 {% endblock %}

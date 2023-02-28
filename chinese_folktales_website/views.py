@@ -48,20 +48,17 @@ def contact(request):
 
 def stories(request):
     story_table = Story.objects.all()
-    print(story_table)
     context = {"story_table": story_table}
     return render(request, "stories.html", context)
 
 
 def story_detail(request, story_id):
     story_id = Story.objects.get(story_id=story_id)
-    context = {"story_id": story_id}
-    return render(request, "story_detail.html", context)
-
-
-def open_audiofile(request, story_id):
-    story_id = Story.objects.get(story_id=story_id)
-    context = {"story_id": story_id}
+    story_imported = StoryImporter()
+    textfile = story_imported.open_textfile(story_id.textfile)
+    context = {"story_id": story_id,
+               "textfile": textfile
+               }
     return render(request, "story_detail.html", context)
 
 
@@ -69,10 +66,11 @@ def about(request):
     return render(request, "about.html")
 
 
-def user_directory_path(request, story_id):
-    story_id = Story.objects.get(story_id=story_id)
-    context = {"story_id": story_id}
-    return render(request, "story_detail.html", context)
+# def user_directory_path(request, story_id):
+#     story_id = Story.objects.get(story_id=story_id)
+#     context = {"story_id": story_id}
+#     return render(request, "story_detail.html", context)
+
 
 @login_required(login_url="login")
 def favorite(request):
