@@ -16,7 +16,7 @@ class StoryImporter:
 
     @staticmethod
     def load_story_list():
-        stories_data_url = 'https://gist.githubusercontent.com/nicoseng/28a98c1a0e7025479923fab8755c8210/raw/b34e0f45797664f31989596f55574afb00ef8319/stories_data'
+        stories_data_url = 'https://gist.githubusercontent.com/nicoseng/28a98c1a0e7025479923fab8755c8210/raw/19bf9d42f924e6ac2e1251b353a11560d8c0f37e/stories_data'
         stories_data = requests.get(stories_data_url)
         story_list = stories_data.json()
         print(story_list)
