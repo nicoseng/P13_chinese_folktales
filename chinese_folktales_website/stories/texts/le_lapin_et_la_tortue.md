@@ -1,7 +1,7 @@
 
 # 龟兔赛跑
 
-# Le lièvre et la tortue
+# Le lapin et la tortue
 
 ### 每天，乌龟都会沿着湖边散步。他很喜欢散步。  
 ###  一天在散步的时候，他听到一阵像风一样的声音。一只兔子飞快地跑了过去。乌龟因此摔倒仰天躺了下来。
@@ -9,7 +9,7 @@
 Chaque jour, la tortue se promène autour du lac.
 Elle aime beaucoup se promener.
 
-Un jour pendant sa promenade, elle entend un bruit comme du vent. Un lièvre court près de la tortue et le fait tomber.
+Un jour pendant sa promenade, elle entend un bruit comme du vent. Un lapin court près de la tortue et le fait tomber.
 
 ###  哈哈！你在这儿干什么？” 兔子嘲笑道。  
 ###  “你应该注意路上的其他人。” 乌龟责备道。  
