@@ -11,28 +11,24 @@ Elle aime beaucoup se promener.
 
 Un jour pendant sa promenade, elle entend un bruit comme du vent. Un lièvre court près de la tortue et le fait tomber.
 
-Every day, the tortoise would take a walk around the lake. He enjoyed walking very much.  
-While walking one day, the tortoise heard a sound like the wind. A hare rushed by and the tortoise fell over on his back as a result.
-
 ###  哈哈！你在这儿干什么？” 兔子嘲笑道。  
 ###  “你应该注意路上的其他人。” 乌龟责备道。  
 ###  “慢吞吞的人不应该挡在路上。” 兔子说。
 
 
-Ha-ha ! Que faites-vous ici ? taquina le lièvre.
+> Ha-ha ! Que faites-vous ici ? taquina le lièvre.
 Vous devriez faire attention aux autres sur la route, lui rétorqua la tortue.
 "Les gens qui marchent lentement ne devraient pas être sur la route", lui répondit le lièvre.
 
-"Ha-ha! What are you doing here?" teased the hare.  
-"You should be careful of others on the road," scolded the tortoise.  
-"Slowpokes shouldn't be on the road," said the hare.
 
-### 一只狐狸经过了。他帮乌龟翻了过来。  
+### 一只狐狸经过了。他帮乌龟翻了过来。
+Un renard passa par ici. Il aida la tortue à se retourner. 
+
 ### “你们两个在聊什么？” 狐狸问。  
 ### “我觉得慢吞吞的人不应该在路上走。你不同意吗，狐狸？” 兔子问。  
 ### “这条路每个人都可以走。” 狐狸说。
 
-Un renard passa par ici. Il aida la tortue à se retourner. 
+
 De quoi parlez-vous tous les deux ? Demanda le renard. 
 "Je pense que les gens qui marchent lentement ne devraient pas utiliser la route. N'est-ce pas Monsieur Renard ?
 "La route est pour tout le monde", dit le renard.

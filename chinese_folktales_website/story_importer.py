@@ -16,7 +16,7 @@ class StoryImporter:
 
     @staticmethod
     def load_story_list():
-        stories_data_url = 'https://gist.githubusercontent.com/nicoseng/28a98c1a0e7025479923fab8755c8210/raw/b69301be44dfdefe5c8e5688d5bf3a83fb7130bf/stories_data'
+        stories_data_url = 'https://gist.githubusercontent.com/nicoseng/28a98c1a0e7025479923fab8755c8210/raw/9c86668fe6d51b2e157b4397b755afb64de5f1f7/stories_data'
         stories_data = requests.get(stories_data_url)
         story_list = stories_data.json()
         print(story_list)
@@ -72,17 +72,11 @@ class StoryImporter:
 
         with open(story_file, 'r') as story_content:
             content = story_content.read()
-            print(content)
-
         story_content_html = markdown.markdown(content)
-        print("résultat:", story_content_html)
-        # s = BeautifulSoup(story_content_html, "html.parser")
-        # print(s)
-        # for title in s.find_all("h1"):
-        #     h1 = s.new_tag("h1")
-        #     h1.string = title.string
-        #     h1.attrs["id"] = slugify(title.string)
-        #     title.replace_with("h1")
-
         return story_content_html
 
+    @staticmethod
+    def open_audiofile(audiofile_name):
+        audiofile_basepath = 'https://github.com/nicoseng/P13_chinese_folktales/blob/0699a2879a5e86756c41b70cace05083a2f55e90/chinese_folktales_website/stories/audio/'
+        audio_file = audiofile_basepath + audiofile_name
+        return audio_file

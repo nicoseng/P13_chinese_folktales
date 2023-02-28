@@ -7,13 +7,14 @@
 <link rel="stylesheet" href="{% static 'css/styles.css'%}">
 <body id="page-top" xmlns="http://www.w3.org/1999/html" class="test">
 <div class="story_content">
-    {{story_id.bg_image}}
+
     <!--        <div class="story_audio" style="background-image:url('{% static 'images/login_tiger.png'%}')">-->
-    <div class="story_audio" style="background-image:url('{% static 'images/ + {{story_id.bg_image}}'%}')">
-        <h1>{{story_id.title}}</h1>
-        <audio class="audio-btn" controls autoplay muted>
-            <source src="/Users/nicolassengmany/Desktop/OCR/Python/Projets/P13/chinese_folktales/chinese_folktales_website/stories/audio/{{story_id.audiofile}}"
-                    type="audio/mpeg">
+<!--    <div class="story_audio" style="background-image:url('{% static 'images/ + {{story_id.bg_image}}'%}')">-->
+            <div class="story_audio">
+
+        <h1>{{story.title}}</h1>
+        <audio class="audio-btn" controls autoplay>
+                <source src="{{story.audiofile}}" type="audio/mpeg">
         </audio>
     </div>
     <div class="story_text">
