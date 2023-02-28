@@ -11,9 +11,7 @@
     {% for story in story_table %}
     <div class="card">
         <div class="card-imgBox">
-                <img class="card-img" src="{% static 'images/{{story.bg_image}}.png' %}">
-
-<!--            <img class="card-img" src="{% static 'images/{{story.bg_image}}' %}">-->
+                <img class="card-img" src="{{story.bg_image}}">
         </div>
         <div class="card-content">
             <a href="{% url 'story_detail' story.story_id %}"><h2>{{story.title}}</h2></a>
