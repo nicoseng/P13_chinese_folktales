@@ -8,9 +8,7 @@
 <body id="page-top" xmlns="http://www.w3.org/1999/html" class="test">
 <div class="story_content">
 
-    <!--        <div class="story_audio" style="background-image:url('{% static 'images/login_tiger.png'%}')">-->
-<!--    <div class="story_audio" style="background-image:url('{% static 'images/ + {{story_id.bg_image}}'%}')">-->
-            <div class="story_audio">
+    <div class="story_audio" style="background-image:url('{{story.bg_image}}')">
 
         <h1>{{story.title}}</h1>
         <audio class="audio-btn" controls>
