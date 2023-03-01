@@ -10,6 +10,7 @@ class StoryAdmin(admin.ModelAdmin):
                     'textfile',
                     'audiofile',
                     'description',
+                    'audio_bg_image',
                     'date'
                     )
 

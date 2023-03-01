@@ -21,6 +21,7 @@ class Story(models.Model):
     bg_image = models.URLField(max_length=1000)
     textfile = models.fields.TextField(max_length=1000, null=True)
     audiofile = models.URLField(max_length=1000)
+    audio_bg_image = models.URLField(max_length=1000, null=True)
     description = models.fields.TextField(max_length=1000, null=True)
     date = models.DateTimeField(auto_now_add=True)
 
