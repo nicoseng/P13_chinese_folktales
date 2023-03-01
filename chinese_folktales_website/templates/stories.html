@@ -16,10 +16,7 @@
         <div class="card-content">
             <a href="{% url 'story_detail' story.story_id %}"><h2>{{story.title}}</h2></a>
             <h3>{{story.level_id.name}}</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat.
-            </p>
+            <p>{{story.description}}</p>
         </div>
     </div>
     {% endfor %}

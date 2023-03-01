@@ -16,7 +16,7 @@ class StoryImporter:
 
     @staticmethod
     def load_story_list():
-        stories_data_url = 'https://gist.githubusercontent.com/nicoseng/28a98c1a0e7025479923fab8755c8210/raw/271bfce6d1fa723f900b994eb0339fa53380c776/stories_data'
+        stories_data_url = 'https://gist.githubusercontent.com/nicoseng/28a98c1a0e7025479923fab8755c8210/raw/35fe09466956cc969a6470e3b2ae3f75914359eb/stories_data'
         stories_data = requests.get(stories_data_url)
         story_list = stories_data.json()
         print(story_list)
@@ -32,7 +32,8 @@ class StoryImporter:
                 title=element["title"],
                 bg_image=element["bg_image"],
                 audiofile=element["audiofile"],
-                textfile=element["textfile"]
+                textfile=element["textfile"],
+                description=element["description"]
             )
             new_story_data.save()
 
@@ -61,7 +62,8 @@ class StoryImporter:
                     title=element["title"],
                     bg_image=element["bg_image"],
                     audiofile=element["audiofile"],
-                    textfile=element["textfile"]
+                    textfile=element["textfile"],
+                    description=element["description"]
                 )
                 new_story_data.save()
 

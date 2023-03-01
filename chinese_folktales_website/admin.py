@@ -9,6 +9,7 @@ class StoryAdmin(admin.ModelAdmin):
                     'level_id',
                     'textfile',
                     'audiofile',
+                    'description',
                     'date'
                     )
 
