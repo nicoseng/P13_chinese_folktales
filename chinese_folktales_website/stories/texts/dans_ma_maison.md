@@ -1,50 +1,65 @@
 # 我的家
 # Ma maison 
 
-### 这是我睡觉的房间。  
-### 我在卧室里睡觉。
+### 這是我睡覺的房間。
+![](../../static/images/dans_ma_maison/img_1.png)
+> Voici la chambre où je dors.
 
-Voici la chambre où je dors.
-Je dors dans la chambre à coucher.
-
-
-### 这是我洗澡的地方。  
-### 我在洗手间里洗澡。
-
-Voici l'endroit où je prends ma douche.
-Je prends ma douche dans la salle de bains.
+### 我在臥室裏睡覺。
+![](../../static/images/dans_ma_maison/img_2.png)
+> Je dors dans la chambre à coucher.
 
 
-### 这是我做饭的地方。  
-### 我在厨房里做饭。
-Voici l'endroit où je cuisine.
-Je cuisine dans la cuisine.
+### 這是我洗澡的地方。
+![](../../static/images/dans_ma_maison/img_3.png)
+> Voici l'endroit où je prends ma douche.
 
-### 这是我吃饭的地方。  
-### 我在餐厅里吃饭。
+### 我在洗手間裏洗澡。
+![](../../static/images/dans_ma_maison/img_4.png)
+> Je prends ma douche dans la salle de bains.
 
-Voici l'endroit où je mange. 
-Je mange dans la salle à manger.
+### 這是我做飯的地方。 
+![](../../static/images/dans_ma_maison/img_5.png)
+> Voici l'endroit où je cuisine.
 
-### 这是我跟爸爸交谈的地方。  
-### 我跟爸爸在客厅里说话。
+### 我在廚房裏做飯。
+![](../../static/images/dans_ma_maison/img_6.png)
+> Je cuisine dans la cuisine.
 
-C'est l'endroit où je discute avec mon papa.
-Je discute avec mon père dans le salon.
+### 這是我吃飯的地方。
+![](../../static/images/dans_ma_maison/img_7.png)
+> Voici l'endroit où je mange. 
 
-### 这是我们停车的地方。  
-### 我们把车停在车库里。
+### 我在餐廳裏吃飯。
+![](../../static/images/dans_ma_maison/img_8.png)
+> Je mange dans la salle à manger.
 
-Voici l'endroit où nous garons notre voiture.
-Nous garons la voiture dans le garage.
+### 這是我跟爸爸交談的地方。 
+![](../../static/images/dans_ma_maison/img_9.png)
+> C'est l'endroit où je discute avec mon papa.
 
-### 这是我玩儿的地方。  
-### 我在院子里玩儿。
+### 我跟爸爸在客廳裏說話。
+![](../../static/images/dans_ma_maison/img_10.png)
+> Je discute avec mon père dans le salon.
 
-Voici l'endroit où je joue. 
-Je joue dans le jardin.
+### 這是我們停車的地方。
+![](../../static/images/dans_ma_maison/img_11.png)
 
-### 这是我的家。我和爸爸妈妈住在一起。  
-### “温暖的家！”
+> Voici l'endroit où nous garons notre voiture.
+### 我們把車停在車庫裏。
+![](../../static/images/dans_ma_maison/img_12.png)
+> Nous garons la voiture dans le garage.
 
-Voici ma maison. Je vis ici avec mon père et ma mère. Une "maison chaleureuse !"
+### 這是我玩兒的地方。 
+![](../../static/images/dans_ma_maison/img_13.png)
+> Voici l'endroit où je joue.
+
+### 我在院子裏玩兒。
+![](../../static/images/dans_ma_maison/img_14.png)
+> Je joue dans le jardin. 
+
+### 這是我的家。我和爸爸媽媽住在一起。  
+### “溫暖的家！”
+![](../../static/images/dans_ma_maison/img_15.png)
+> Voici ma maison. Je vis ici avec mon père et ma mère. 
+> Une "maison chaleureuse !"
