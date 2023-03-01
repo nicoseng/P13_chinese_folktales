@@ -5,6 +5,7 @@
 ## 我看到石头。
 ## Wǒ kàndào shítou.
 ### Je vois un rocher.
+![](img_1.png)
 
 ## 我看到螞蟻。
 ## Wǒ kàndào mǎyǐ.
