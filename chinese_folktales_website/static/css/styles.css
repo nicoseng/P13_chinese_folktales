@@ -401,9 +401,17 @@ audio::-webkit-media-controls-panel
     border-radius: 10px;
 }
 
-.story_text blockquote
+.story_text h3
 {
-     background: pink;
+    font-size: 1.8em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    padding: 20px;
+	font-family: 'Kaiti TC';
+	font-weight: lighter;
 }
 /*
 .story_text p > a
