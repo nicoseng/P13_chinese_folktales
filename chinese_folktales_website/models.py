@@ -18,6 +18,7 @@ class Story(models.Model):
     story_id = models.IntegerField(primary_key=True)
     level_id = models.ForeignKey(Level, on_delete=models.CASCADE, null=True)
     title = models.fields.TextField(max_length=1000, null=True)
+    chinese_title = models.fields.TextField(max_length=1000, null=True)
     bg_image = models.URLField(max_length=1000)
     textfile = models.fields.TextField(max_length=1000, null=True)
     audiofile = models.URLField(max_length=1000)

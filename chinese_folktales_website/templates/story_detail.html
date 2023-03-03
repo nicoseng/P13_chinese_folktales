@@ -5,21 +5,19 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
       integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+
+
 <body id="page-top" xmlns="http://www.w3.org/1999/html" class="test">
 <div class="story_content">
-
-    <div class="story_audio" style="background-image: url('{{story.audio_bg_image}}')">
-<!--    <div class="story_audio">-->
-        <h1>{{story.title}}</h1>
+    <div class="story_audio">
+        <h2>{{story.chinese_title}}</h2>
+        <h3>{{story.title}}</h3>
         <audio class="audio-btn" controls>
-                <source src="{{story.audiofile}}" type="audio/mpeg">
+            <source src="{{story.audiofile}}" type="audio/mpeg">
         </audio>
     </div>
     <div class="story_text">
         {{textfile | safe}}
-    </div>
-    <div class="story_image">
-
     </div>
 </div>
 {% endblock %}

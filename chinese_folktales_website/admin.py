@@ -5,6 +5,7 @@ from .models import Story, Level, Favourite, Comment
 class StoryAdmin(admin.ModelAdmin):
     list_display = ('story_id',
                     'title',
+                    'chinese_title',
                     'bg_image',
                     'level_id',
                     'textfile',

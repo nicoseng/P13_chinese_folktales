@@ -66,12 +66,6 @@ def about(request):
     return render(request, "about.html")
 
 
-# def user_directory_path(request, story_id):
-#     story_id = Story.objects.get(story_id=story_id)
-#     context = {"story_id": story_id}
-#     return render(request, "story_detail.html", context)
-
-
 @login_required(login_url="login")
 def favorite(request):
     return render(request, "favorite.html")

@@ -1,43 +1,43 @@
 # 大和小
 # Dà hé xiǎo
-# Grand et petit
 
+![](../../static/images/grand_et_petit/img_1.png)
 ## 我的帽子很小。
 ## Wǒ de màozi hěn xiǎo.
-![](../../static/images/grand_et_petit/img_1.png)
-> Mon chapeau est petit.
+### Mon chapeau est petit.
 
+![](../../static/images/grand_et_petit/img_2.png)
 ## 我的帽子很大。
 ## Wǒ de màozi hěn dà.
-![](../../static/images/grand_et_petit/img_2.png)
-> Mon chapeau est grand.
+### Mon chapeau est grand.
 
+![](../../static/images/grand_et_petit/img_3.png)
 ## 我的包很輕。
 ## Wǒ de bāo hěn qīng.
-![](../../static/images/grand_et_petit/img_3.png)
-> Mon sac est léger.
+### Mon sac est léger.
 
+![](../../static/images/grand_et_petit/img_4.png)
 ## 我的包很重。
 ## Wǒ de bāo hěn zhòng.
-![](../../static/images/grand_et_petit/img_4.png)
-> Mon sac est lourd.
+### Mon sac est lourd.
 
+![](../../static/images/grand_et_petit/img_5.png)
 ## 我的火車很短。
 ## Wǒ de huǒchē hěn duǎn.
-![](../../static/images/grand_et_petit/img_5.png)
-> Mon train est court.
+### Mon train est court.
 
+![](../../static/images/grand_et_petit/img_6.png)
 ## 我的火車很長。
 ## Wǒ de huǒchē hěn cháng.
-![](../../static/images/grand_et_petit/img_6.png)
-> Mon train est long.
+### Mon train est long.
+
+![](../../static/images/grand_et_petit/img_7.png)
 
 ## 我的書很薄。 
 ## Wǒ de shū hěn báo.
-![](../../static/images/grand_et_petit/img_7.png)
-> Mon livre est fin.
+### Mon livre est fin.
 
+![](../../static/images/grand_et_petit/img_8.png)
 ## 我的書很厚。
 ## Wǒ de shū hěn hòu.
-![](../../static/images/grand_et_petit/img_8.png)
-> Mon livre est épais.
+### Mon livre est épais.

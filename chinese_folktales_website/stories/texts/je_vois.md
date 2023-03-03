@@ -1,8 +1,3 @@
-# 我看到
-# Wǒ kàndào
-# Je vois
-
-
 ## 我看到石頭。
 ## Wǒ kàndào shítou.
 ![](../../static/images/je_vois/img_1.png)

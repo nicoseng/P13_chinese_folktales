@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis&family=Noto+Sans+TC:wght@300&display=swap');
 *
 {
 	font-family: 'Poppins', sans-serif;
@@ -327,39 +328,113 @@ header a
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
-
+/*----------------------------Story details parameters----------------------------*/
 .story_content
 {
     width: 100%;
-    height: 50%;
+    height: 73%;
 
 }
 
 .story_audio
 {
-    background : orange;
-    width: 100%;
-    height: 70%;
+    height: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background : #F39C12 ;
+
+
+}
+.story_audio h2
+{
+    font-size: 3em;
+    font-family: 'Yuanti TC', sans-serif;
 }
 
-.story_text
+.story_audio h3
 {
-    text-align: center;
-    font-size: 1.2em;
-    line-height: 4em;
-    width: 100%;
+    font-size: 2em;
+    font-family: 'Dosis', sans-serif;
 }
 
 .audio-btn
 {
     margin-top: 20px;
     width: 50%;
+    background: #F5B041;
+    font-weight: 200;
+    box-shadow: 3px 3px 3px #E67E22;
 }
 
+audio::-webkit-media-controls-panel
+{
+  background-color: #F5B041;
+}
+
+.story_text
+{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    padding: 30px;
+    background : white;
+}
+.story_text p
+{
+    font-size: 1.1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    padding: 20px;
+}
+
+.story_text p > img
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
+
+.story_text blockquote
+{
+     background: pink;
+}
+/*
+.story_text p > a
+{
+    text-align: center;
+    line-height: 2em;
+    width : 50%;
+	font-family: 'Kaiti TC';
+	font-weight: lighter;
+}
+
+.story_text p
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: lightgrey;
+    line-height: 2em;
+    width : 50%;
+
+}
+
+.story_text p img
+{
+    margin: 20px;
+    border-radius: 10px;
+}
+*/
+/*----------------------------End of story details parameters----------------------------*/
 /*----------------------------Stories parameters----------------------------*/
 .card-container
 {
@@ -857,6 +932,12 @@ header a
         justify-content: center;
         align-items: center;
         margin-top: -20px;
+    }
+    .story_text p img
+    {
+        margin-left: 0px;
+        border-radius : 10px;
+        max-width: 100%;
     }
 }
 

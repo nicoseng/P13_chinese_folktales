@@ -1,47 +1,23 @@
 {% extends "base.html" %}
-
 {% block content %}
 {% load static %}
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
       integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" href="{% static 'css/styles.css'%}">
 <body id="page-top" xmlns="http://www.w3.org/1999/html" class="test">
-
 <div class="card-container">
     {% for story in story_table %}
     <div class="card">
         <div class="card-imgBox">
-                <img class="card-img" src="{{story.bg_image}}">
+            <img class="card-img" src="{{story.bg_image}}">
         </div>
         <div class="card-content">
             <a href="{% url 'story_detail' story.story_id %}"><h2>{{story.title}}</h2></a>
-            <h3>{{story.level_id.name}}</h3>
+            <h4>{{story.level_id.name}}</h4>
             <p>{{story.description}}</p>
         </div>
     </div>
     {% endfor %}
-<!--    <div class="card">-->
-<!--        <div class="card-imgBox">-->
-<!--            <img  class="card-img" src="{% static 'images/bubble_tea.png' %}">-->
-<!--        </div>-->
-<!--        <div class="card-content">-->
-<!--            <a href="{% url 'story_detail' 2 %}"><h2>Histoire 2</h2></a>-->
-<!--            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et-->
-<!--                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip-->
-<!--                ex ea commodo consequat.</p>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div class="card">-->
-<!--        <div class="card-imgBox">-->
-<!--            <img class="card-img" src="{% static 'images/delicious_casserole.png' %}">-->
-<!--        </div>-->
-<!--        <div class="card-content">-->
-<!--            <a href="{% url 'story_detail' 3 %}"><h2>Histoire 3</h2></a>-->
-<!--            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et-->
-<!--                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip-->
-<!--                ex ea commodo consequat.</p>-->
-<!--        </div>-->
-<!--    </div>-->
 </div>
 </body>
 {% endblock %}
