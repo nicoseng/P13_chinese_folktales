@@ -1,61 +1,76 @@
-## 這是我睡覺的房間。
 ![](../../static/images/dans_ma_maison/img_1.png)
-### Voici la chambre où je dors.
 
-## 我在臥室裏睡覺。
+### 這是我睡覺的房間。
+> Voici la chambre où je dors.
+
 ![](../../static/images/dans_ma_maison/img_2.png)
-### Je dors dans la chambre à coucher.
 
+### 我在臥室裏睡覺。
+> Je dors dans la chambre à coucher.
 
-## 這是我洗澡的地方。
 ![](../../static/images/dans_ma_maison/img_3.png)
-### Voici l'endroit où je prends ma douche.
 
-## 我在洗手間裏洗澡。
+### 這是我洗澡的地方。
+> Voici l'endroit où je prends ma douche.
+
 ![](../../static/images/dans_ma_maison/img_4.png)
-### Je prends ma douche dans la salle de bains.
 
-## 這是我做飯的地方。 
+### 我在洗手間裏洗澡。
+> Je prends ma douche dans la salle de bains.
+
 ![](../../static/images/dans_ma_maison/img_5.png)
-### Voici l'endroit où je cuisine.
 
-## 我在廚房裏做飯。
+### 這是我做飯的地方。
+> Voici l'endroit où je cuisine.
+
 ![](../../static/images/dans_ma_maison/img_6.png)
-### Je cuisine dans la cuisine.
 
-## 這是我吃飯的地方。
+### 我在廚房裏做飯。
+> Je cuisine dans la cuisine.
+
 ![](../../static/images/dans_ma_maison/img_7.png)
-### Voici l'endroit où je mange. 
 
-## 我在餐廳裏吃飯。
+### 這是我吃飯的地方。
+> Voici l'endroit où je mange. 
+
 ![](../../static/images/dans_ma_maison/img_8.png)
-### Je mange dans la salle à manger.
 
-## 這是我跟爸爸交談的地方。 
+### 我在餐廳裏吃飯。
+> Je mange dans la salle à manger.
+
 ![](../../static/images/dans_ma_maison/img_9.png)
-###  C'est l'endroit où je discute avec mon papa.
 
-## 我跟爸爸在客廳裏說話。
+### 這是我跟爸爸交談的地方。
+>  C'est l'endroit où je discute avec mon papa.
+
 ![](../../static/images/dans_ma_maison/img_10.png)
-### Je discute avec mon père dans le salon.
 
-## 這是我們停車的地方。
+### 我跟爸爸在客廳裏說話。
+> Je discute avec mon père dans le salon.
+
 ![](../../static/images/dans_ma_maison/img_11.png)
-### Voici l'endroit où nous garons notre voiture.
-## 我們把車停在車庫裏。
+
+### 這是我們停車的地方。
+> Voici l'endroit où nous garons notre voiture.
+
 ![](../../static/images/dans_ma_maison/img_12.png)
-### Nous garons la voiture dans le garage.
 
-## 這是我玩兒的地方。 
+### 我們把車停在車庫裏。
+> Nous garons la voiture dans le garage.
+
 ![](../../static/images/dans_ma_maison/img_13.png)
-### Voici l'endroit où je joue.
 
-## 我在院子裏玩兒。
+### 這是我玩兒的地方。 
+> Voici l'endroit où je joue.
+
 ![](../../static/images/dans_ma_maison/img_14.png)
-### Je joue dans le jardin. 
 
-## 這是我的家。我和爸爸媽媽住在一起。  
-## “溫暖的家！”
+### 我在院子裏玩兒。
+> Je joue dans le jardin. 
+
 ![](../../static/images/dans_ma_maison/img_15.png)
-### Voici ma maison. Je vis ici avec mon père et ma mère. 
-### Une "maison chaleureuse !"
+### 這是我的家。我和爸爸媽媽住在一起
+> Voici ma maison. Je vis ici avec mon père et ma mère. 
+
+### “溫暖的家！”
+> Une "maison chaleureuse !"

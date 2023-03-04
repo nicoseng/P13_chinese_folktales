@@ -344,8 +344,6 @@ header a
     justify-content: center;
     align-items: center;
     background : #F39C12 ;
-
-
 }
 .story_audio h2
 {
@@ -377,9 +375,8 @@ audio::-webkit-media-controls-panel
 {
     display: flex;
     flex-direction: column;
-    align-content: center;
     justify-content: center;
-    padding: 30px;
+    padding: 0 250px 0 250px;
     background : white;
 }
 .story_text p
@@ -413,35 +410,7 @@ audio::-webkit-media-controls-panel
 	font-family: 'Kaiti TC';
 	font-weight: lighter;
 }
-/*
-.story_text p > a
-{
-    text-align: center;
-    line-height: 2em;
-    width : 50%;
-	font-family: 'Kaiti TC';
-	font-weight: lighter;
-}
 
-.story_text p
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background: lightgrey;
-    line-height: 2em;
-    width : 50%;
-
-}
-
-.story_text p img
-{
-    margin: 20px;
-    border-radius: 10px;
-}
-*/
 /*----------------------------End of story details parameters----------------------------*/
 /*----------------------------Stories parameters----------------------------*/
 .card-container
@@ -941,11 +910,34 @@ audio::-webkit-media-controls-panel
         align-items: center;
         margin-top: -20px;
     }
+
+    .story_content
+    {
+        height: 65%;
+    }
+    .story_text
+    {
+        padding: 30px;
+    }
     .story_text p img
     {
         margin-left: 0px;
         border-radius : 10px;
         max-width: 100%;
+    }
+
+    .story_text h3
+    {
+        font-size: 1.4em;
+    }
+
+    .story_text p
+    {
+        font-size: 1em;
+    }
+    .story_audio
+    {
+        height: 60%;
     }
 }
 
