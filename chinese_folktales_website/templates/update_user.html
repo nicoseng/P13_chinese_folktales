@@ -13,17 +13,19 @@
 
     <div class="box two">
         <div class="internal-box">
-            <h2>Modifier le mot de passe</h2>
-            <form id="login-form" method="POST" action="{% url 'change_password' %}">
+            <h2>Modifier le profil</h2>
+            <form id="login-form" method="POST" action="{% url 'update_user' %}">
                 {% csrf_token %}
                 <div class="logo-input-block">
-                    <span><i class="fas fa-key"></i></span><br>
-                    {{change_password_form.new_password1}}
+                    <span><ion-icon class="fas fa-user"></ion-icon></span><br>
+                    {{update_user_form.new_username}}
                 </div>
+
                 <div class="logo-input-block">
-                    <span><i class="fas fa-key"></i></span><br>
-                    {{change_password_form.new_password2}}
+                    <span><ion-icon class="fas fa-envelope"></ion-icon></span><br>
+                    {{update_user_form.new_email}}
                 </div>
+
                 <div class="button">
                     <input class="button-input" type="submit" id="submit" name="submit" value="Enregistrer">
                 </div>

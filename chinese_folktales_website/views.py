@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from django.utils.safestring import mark_safe
-from .forms import CreateUser
+from .forms import CreateUser, UpdateUserForm, ChangePasswordForm
 from .level_importer import LevelImporter
 from .story_importer import StoryImporter
 from .models import Story
@@ -90,19 +90,48 @@ def info_user(request):
 
 
 def change_password(request):
-    return render(request, "change_password.html")
+    user = request.user
+    change_password_form = ChangePasswordForm(user, request.POST)
+    if request.method == 'POST':
+        if change_password_form.is_valid():
+            change_password_form.save()
+            messages.success(request, "Mot de passe bien modifié !")
+            return redirect('login')
+        else:
+            messages.error(request, mark_safe("Erreur : Mot de passe différents !<br/>Veuillez recommencer votre saisie"))
+            change_password_form = ChangePasswordForm(user, request.POST)
+
+    context = {'change_password_form': change_password_form}
+    return render(request, 'change_password.html', context)
 
 
-def edit_profile(request):
-    return render(request, "edit_profile.html")
+def update_user(request):
+    actual_user_data = User.objects.get(username=request.user)
+    if request.method == "POST":
+        update_user_form = UpdateUserForm(request.POST, instance=actual_user_data)
+        new_username = update_user_form["new_username"].value()
+        new_email = update_user_form["new_email"].value()
+        if update_user_form.is_valid():
+            update_user_form.save()
+            new_user_data = update_user_form.update_user(
+                actual_user_data,
+                new_username,
+                new_email,
+                actual_user_data.password
+            )
+            messages.success(request, 'Profil bien mis à jour pour ' + new_user_data.username + ' !')
+            return redirect('login')
+    else:
+        update_user_form = UpdateUserForm(request.POST)
+
+    context = {'update_user_form': update_user_form}
+    return render(request, 'update_user.html', context)
 
 
 def submit_mail(request):
     current_user = request.user
-    print(current_user.email)
     if request.method == "POST":
         message = request.POST["message"]
-        print(message)
         send_mail(
             'Message',
             message,

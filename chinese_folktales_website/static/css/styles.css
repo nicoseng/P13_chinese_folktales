@@ -328,6 +328,12 @@ header a
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
+
+.messages
+{
+    text-align:center;
+    font-weight: bold;
+}
 /*----------------------------Story details parameters----------------------------*/
 .story_content
 {
@@ -704,6 +710,36 @@ audio::-webkit-media-controls-panel
         flex-direction: column;
         height: 50vh;
     }
+
+    .story_content
+    {
+        height: 65%;
+    }
+    .story_text
+    {
+        padding: 30px;
+    }
+    .story_text p img
+    {
+        margin-left: 0px;
+        border-radius : 10px;
+        max-width: 100%;
+    }
+
+    .story_text h3
+    {
+        font-size: 1.4em;
+    }
+
+    .story_text p
+    {
+        font-size: 1em;
+    }
+    .story_audio
+    {
+        height: 60%;
+    }
+
 
     /* ----------------------------end of stories parameters--------------------*/
     #info_user_img

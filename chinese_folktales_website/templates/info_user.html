@@ -10,7 +10,6 @@
     <div class="box one">
         <img src="{% static 'images/info_user.png' %}" alt="info_user" id="info_user_img">
     </div>
-
     <div class="box two">
         <h2>Informations utilisateur</h2>
         <div class="internal-box">
@@ -63,71 +62,18 @@
                 </tbody>
             </table>
         </div>
-                    <div class="change_paramaters">
-            <a href="{% url 'edit_profile'%}">
-                            <ion-icon name="man"></ion-icon>
-                            Modifier le profil
-                        </a>
-                                    <a href="{% url 'change_password'%}">
-                            <ion-icon name="key"></ion-icon>
-                            Modifier le mot de passe
-                        </a>
-            </div>
+        <div class="change_paramaters">
+            <a href="{% url 'update_user'%}">
+                <ion-icon name="man"></ion-icon>
+                Modifier le profil
+            </a>
+            <a href="{% url 'change_password'%}">
+                <ion-icon name="key"></ion-icon>
+                Modifier le mot de passe
+            </a>
+        </div>
     </div>
 </div>
-<!--    <div class="info_user">-->
-<!--        <h2>Informations utilisateur</h2><br>-->
-<!--        <div>-->
-<!--            <table class="table table-user-information">-->
-<!--                <tbody>-->
-<!--                <tr>-->
-<!--                    <td>-->
-<!--                        <strong>-->
-<!--                            <ion-icon name="person-circle-outline"></ion-icon>-->
-<!--                            Pseudonyme :-->
-<!--                        </strong>-->
-<!--                    </td>-->
-<!--                    <td>-->
-<!--                        {{user.username}}-->
-<!--                    </td>-->
-<!--                </tr>-->
-<!--                <tr>-->
-<!--                    <td>-->
-<!--                        <strong>-->
-<!--                            <ion-icon name="mail"></ion-icon>-->
-<!--                            Email :-->
-<!--                        </strong>-->
-<!--                    </td>-->
-<!--                    <td>-->
-<!--                        {{user.email}}-->
-<!--                    </td>-->
-<!--                </tr>-->
-<!--                <tr>-->
-<!--                    <td>-->
-<!--                        <strong>-->
-<!--                            <ion-icon name="calendar"></ion-icon>-->
-<!--                            Date de création :-->
-<!--                        </strong>-->
-<!--                    </td>-->
-<!--                    <td>-->
-<!--                        {{user.date_joined}}-->
-<!--                    </td>-->
-<!--                </tr>-->
-<!--                <tr>-->
-<!--                    <td>-->
-<!--                        <strong>-->
-<!--                            <ion-icon name="calendar"></ion-icon>-->
-<!--                            Modifié le :-->
-<!--                        </strong>-->
-<!--                    </td>-->
-<!--                    <td>-->
-<!--                        {{ user.last_login }}-->
-<!--                    </td>-->
-<!--                </tr>-->
-<!--                </tbody>-->
-<!--            </table>-->
-<!--        </div>-->
-<!--    </div>-->
 </div>
 </body>
 {% endblock %}

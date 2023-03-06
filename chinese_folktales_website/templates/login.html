@@ -12,6 +12,11 @@
 
     <div class="box two">
         <div class="internal-box">
+            {% for message in messages %}
+            <div>
+                <p id="messages" class="messages">{{ message }}</p>
+            </div>
+            {% endfor %}
             <h2>Se connecter</h2>
             <form id="login-form" method="POST" action="{% url 'login' %}">
                 {% csrf_token %}
