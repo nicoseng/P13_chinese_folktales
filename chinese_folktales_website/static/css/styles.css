@@ -464,6 +464,18 @@ audio::-webkit-media-controls-panel
     color: #75160C;
 }
 
+.tiger_about , .chinese_logo
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.textBox p
+{
+    text-align: justify;
+}
+
 /* ----------------------------end of stories parameters--------------------*/
 
 .sci
@@ -850,8 +862,14 @@ audio::-webkit-media-controls-panel
 	{
 		max-width: 100%;
 		margin-top: 55px;
-		padding: 2px;
+		padding-right: 50px;
 	}
+
+    .content .textBox p
+    {
+        text-align: justify;
+
+    }
 	.content .textBox h2
 	{
 		font-size: 1.5em;
@@ -974,6 +992,11 @@ audio::-webkit-media-controls-panel
     .story_audio
     {
         height: 60%;
+    }
+
+    .tiger_about , .chinese_logo
+    {
+        padding-right: 10px;
     }
 }
 
