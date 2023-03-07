@@ -500,9 +500,10 @@ audio::-webkit-media-controls-panel
 .favorite_table th
 {
     padding: 10px;
-    background: #FADBD8;
+    background: #F5B7B1;
     width: 10%;
-    border-radius: 5px 5px 0px 0px;
+
+
 }
 
 .favorite_table tr
@@ -529,6 +530,15 @@ audio::-webkit-media-controls-panel
     color: white;
     border: none;
 
+}
+.image_row
+{
+    border-top-left-radius: 5px;
+}
+
+.options_row
+{
+    border-top-right-radius: 5px;
 }
 /* ----------------------------end of stories parameters--------------------*/
 
