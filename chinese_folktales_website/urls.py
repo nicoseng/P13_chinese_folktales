@@ -1,8 +1,6 @@
 from django.contrib import admin
 from django.urls import path
 from chinese_folktales_website import views
-# from django.conf import settings
-# from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.home, name='home'),
@@ -13,13 +11,12 @@ urlpatterns = [
     path('stories/', views.stories, name="stories"),
     path('stories/<int:story_id>/', views.story_detail, name="story_detail"),
     path('about/', views.about, name="about"),
-    path('favorite/', views.favorite, name="favorite"),
+    path('display_favorite/', views.display_favorite, name="display_favorite"),
+    path('add_favorite/', views.add_favorite, name='add_favorite'),
+    path('delete_story/', views.delete_story, name='delete_story'),
     path('create_account/', views.create_account, name="create_account"),
     path('info_user/', views.info_user, name="info_user"),
     path('change_password/', views.change_password, name="change_password"),
     path('update_user/', views.update_user, name="update_user"),
     path('admin/', admin.site.urls),
 ]
-
-# if settings.DEBUG:
-#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

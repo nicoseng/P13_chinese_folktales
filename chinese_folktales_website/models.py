@@ -27,20 +27,9 @@ class Story(models.Model):
     date = models.DateTimeField(auto_now_add=True)
 
 
-class Favourite(models.Model):
+class Favorite(models.Model):
     class Meta:
         ordering = ['story_id']
 
     user_id = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     story_id = models.ForeignKey(Story, on_delete=models.CASCADE, null=True)
-
-
-class Comment(models.Model):
-    class Meta:
-        ordering = ['story_id']
-
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    story_id = models.ForeignKey(Story, on_delete=models.CASCADE, null=True)
-    comment = models.TextField(max_length=500, null=True)
-    rating = models.IntegerField(default=0, null=True)
-    date = models.DateTimeField(auto_now_add=True)

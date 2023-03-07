@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'css/styles.css'%}">
+<body id="page-top" xmlns="http://www.w3.org/1999/html" class="test">
+
+
+<div class="content">
+    <table class="favorite_table">
+        <tr>
+            <th class="image_row">Image</th>
+            <th>Titre</th>
+            <th>Titre en chinois</th>
+            <th>Options</th>
+        </tr>
+        {% for favorite in favorite_database %}
+        <tr>
+            <td><img class="favorite_img" src="{{favorite.story_id.bg_image}}"></td>
+            <td>{{favorite.story_id.title}}</td>
+            <td>{{favorite.story_id.chinese_title}}</td>
+            <td>
+                <form method="POST" action="{% url 'delete_story' %}">
+                    {% csrf_token %}
+                    <input class="delete-btn" type="submit" name="supprimer_produit" value="Supprimer">
+                    <input type="hidden" name="favorite_story_id"
+                           value="{{favorite.story_id.story_id}}"><br>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

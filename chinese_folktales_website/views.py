@@ -12,7 +12,9 @@ from django.utils.safestring import mark_safe
 from .forms import CreateUser, UpdateUserForm, ChangePasswordForm
 from .level_importer import LevelImporter
 from .story_importer import StoryImporter
-from .models import Story
+from .favorite import StoryInFavorite
+from .delete_story import StoryEliminator
+from .models import Story, Favorite
 
 
 def home(request):
@@ -67,8 +69,42 @@ def about(request):
 
 
 @login_required(login_url="login")
-def favorite(request):
-    return render(request, "favorite.html")
+def add_favorite(request):
+    # We fetch the id of the user
+    current_user = request.user
+    print(current_user)
+    user_id = current_user.id
+    print(user_id)
+
+    if request.method == "POST":
+        story_selected = request.POST.get('story_selected')
+        print(story_selected)
+        favorite_database = StoryInFavorite()
+        favorite_database = favorite_database.inject_story_in_favorite(story_selected, user_id)
+
+        context = {"favorite_database": favorite_database}
+        return render(request, "display_favorite.html", context)
+
+
+@login_required(login_url="login")
+def display_favorite(request):
+    current_user = request.user
+    user_id = current_user.id
+    favorite_database = StoryInFavorite()
+    favorite_database = favorite_database.retrieve_favorite_database(user_id)
+
+    context = {"favorite_database": favorite_database}
+    return render(request, 'display_favorite.html', context)
+
+
+@login_required(login_url="login")
+def delete_story(request):
+    if request.method == "POST":
+        favorite_story_id = request.POST.get('favorite_story_id')
+        story_deleted = StoryEliminator()
+        favorite_database = story_deleted.delete_story(favorite_story_id)
+        context = {"favorite_database": favorite_database}
+        return render(request, 'display_favorite.html', context)
 
 
 def create_account(request):
@@ -98,7 +134,8 @@ def change_password(request):
             messages.success(request, "Mot de passe bien modifié !")
             return redirect('login')
         else:
-            messages.error(request, mark_safe("Erreur : Mot de passe différents !<br/>Veuillez recommencer votre saisie"))
+            messages.error(request,
+                           mark_safe("Erreur : Mot de passe différents !<br/>Veuillez recommencer votre saisie"))
             change_password_form = ChangePasswordForm(user, request.POST)
 
     context = {'change_password_form': change_password_form}

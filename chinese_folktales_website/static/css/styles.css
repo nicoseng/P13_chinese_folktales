@@ -329,11 +329,24 @@ header a
     border-bottom-left-radius: 5px;
 }
 
+.favorite-btn
+{
+    background: #F1948A ;
+    border: none;
+    margin-top: 10px;
+    padding: 5px;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+}
+
 .messages
 {
     text-align:center;
     font-weight: bold;
 }
+
 /*----------------------------Story details parameters----------------------------*/
 .story_content
 {
@@ -476,6 +489,47 @@ audio::-webkit-media-controls-panel
     text-align: justify;
 }
 
+.favorite_table
+{
+    background: #EBEDEF;
+    border-radius: 5px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.favorite_table th
+{
+    padding: 10px;
+    background: #FADBD8;
+    width: 10%;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.favorite_table tr
+{
+    height: 50%;
+    padding: 20px;
+    text-align: center;
+
+}
+
+.favorite_img
+{
+    max-width: 30%;
+    margin: 10px;
+    border-radius: 5px;
+
+}
+
+.delete-btn
+{
+    padding: 5px;
+    background: #fc4955;
+    border-radius: 5px;
+    color: white;
+    border: none;
+
+}
 /* ----------------------------end of stories parameters--------------------*/
 
 .sci

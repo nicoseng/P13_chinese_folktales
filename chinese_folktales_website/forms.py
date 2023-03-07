@@ -47,20 +47,3 @@ class ChangePasswordForm(SetPasswordForm):
 
     new_password1 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Nouveau mot de passe'}))
     new_password2 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Confirmer le nouveau mot de passe'}))
-
-
-# class CommentForm(forms.ModelForm):
-#     class Meta:
-#         model = Comment
-#         fields = ["comment", "rating"]
-
-    # @staticmethod
-    # def save_comment(user, product_id, comment, rating):
-    #     comment_data = Comment(
-    #         user_id=user,
-    #         product_id=Product.objects.get(product_id=product_id),
-    #         comment=comment,
-    #         rating=rating,
-    #     )
-    #     comment_data.save()
-    #     return comment

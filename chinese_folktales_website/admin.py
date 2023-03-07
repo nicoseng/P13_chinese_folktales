@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Story, Level, Favourite, Comment
+from .models import Story, Level, Favorite
 
 
 class StoryAdmin(admin.ModelAdmin):
@@ -16,7 +16,7 @@ class StoryAdmin(admin.ModelAdmin):
                     )
 
 
-class FavouriteAdmin(admin.ModelAdmin):
+class FavoriteAdmin(admin.ModelAdmin):
     list_display = ('user_id',
                     'story_id'
                     )
@@ -28,16 +28,6 @@ class LevelAdmin(admin.ModelAdmin):
                     )
 
 
-class CommentAdmin(admin.ModelAdmin):
-    list_display = ('user_id',
-                    'story_id',
-                    'comment',
-                    'rating',
-                    'date'
-                    )
-
-
 admin.site.register(Story, StoryAdmin)
-admin.site.register(Favourite, FavouriteAdmin)
+admin.site.register(Favorite, FavoriteAdmin)
 admin.site.register(Level, LevelAdmin)
-admin.site.register(Comment, CommentAdmin)
