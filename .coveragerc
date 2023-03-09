@@ -1,0 +1,9 @@
+[run]
+omit =  */venv/*
+        */management/*
+        */manage.py
+        */chinese_folktales/*
+        */tests/*
+        */static/*
+        */migrations/*
+        */functional_tests/*

@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-g!9^3)(6(d6%bh*x*%1uqj#90nfdx7bvqmxy#4y@=^e60@sj3k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1"]
 
 # Application definition
 
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'chinese_folktales_website',
+
 ]
 
 MIDDLEWARE = [

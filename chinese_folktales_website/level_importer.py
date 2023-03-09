@@ -25,6 +25,9 @@ class LevelImporter:
             )
             level_data.save()
 
+        level_table = Level.objects.all()
+        return level_table
+
     @staticmethod
     def update_level_table(level_list, level_table):
 
@@ -48,3 +51,6 @@ class LevelImporter:
                     name=element
                 )
                 level_data.save()
+
+        level_table = Level.objects.all()
+        return level_table
