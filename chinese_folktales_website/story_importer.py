@@ -34,6 +34,8 @@ class StoryImporter:
                 description=element["description"]
             )
             new_story_data.save()
+        story_table = Story.objects.all()
+        return story_table
 
     @staticmethod
     def update_story_table(story_list, level_table, story_table):
@@ -66,6 +68,9 @@ class StoryImporter:
                     description=element["description"]
                 )
                 new_story_data.save()
+        story_table = Story.objects.all()
+        return story_table
+
 
     @staticmethod
     def open_textfile(textfile_name):
@@ -77,8 +82,8 @@ class StoryImporter:
         story_content_html = markdown(content)
         return story_content_html
 
-    @staticmethod
-    def open_audiofile(audiofile_name):
-        audiofile_basepath = 'https://github.com/nicoseng/P13_chinese_folktales/blob/0699a2879a5e86756c41b70cace05083a2f55e90/chinese_folktales_website/stories/audio/'
-        audio_file = audiofile_basepath + audiofile_name
-        return audio_file
+    # @staticmethod
+    # def open_audiofile(audiofile_name):
+    #     audiofile_basepath = 'https://github.com/nicoseng/P13_chinese_folktales/blob/0699a2879a5e86756c41b70cace05083a2f55e90/chinese_folktales_website/stories/audio/'
+    #     audio_file = audiofile_basepath + audiofile_name
+    #     return audio_file
