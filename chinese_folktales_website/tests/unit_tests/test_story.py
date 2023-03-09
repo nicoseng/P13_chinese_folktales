@@ -4,7 +4,7 @@ from chinese_folktales_website.story_importer import StoryImporter
 from chinese_folktales_website.models import Level, Story
 
 
-class TestFavorite(TestCase):
+class TestStory(TestCase):
 
     def setUp(self):
         self.story_imported = StoryImporter()
@@ -28,4 +28,4 @@ class TestFavorite(TestCase):
         self.test_story_table = Story.objects.all()
 
     def test_inject_story_in_database(self):
-        test_results = self.story_imported.inject_story_in_database(self.test_story_list, self.test_level, self.test_story_table)
+        test_results = self.story_imported.inject_story_in_database(self.test_story_list, self.test_level_table, self.test_story_table)
