@@ -1,5 +1,4 @@
 from requests import get
-
 from django.shortcuts import render
 from django.contrib import messages
 from django.contrib.auth.models import User
@@ -72,13 +71,10 @@ def about(request):
 def add_favorite(request):
     # We fetch the id of the user
     current_user = request.user
-    print(current_user)
     user_id = current_user.id
-    print(user_id)
 
     if request.method == "POST":
         story_selected = request.POST.get('story_selected')
-        print(story_selected)
         favorite_database = StoryInFavorite()
         favorite_database = favorite_database.inject_story_in_favorite(story_selected, user_id)
 

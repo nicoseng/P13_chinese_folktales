@@ -1,9 +1,6 @@
 from chinese_folktales_website.models import Story, Level
-
 from pathlib import Path
-from bs4 import BeautifulSoup
-from slugify import slugify
-import markdown
+from markdown import markdown
 import os
 import json
 import requests
@@ -19,7 +16,6 @@ class StoryImporter:
         stories_data_url = 'https://gist.githubusercontent.com/nicoseng/28a98c1a0e7025479923fab8755c8210/raw/a11aabb0b28380d66f53543d5abc6710c195ba13/stories_data'
         stories_data = requests.get(stories_data_url)
         story_list = stories_data.json()
-        print(story_list)
         return story_list
 
     @staticmethod
@@ -78,7 +74,7 @@ class StoryImporter:
 
         with open(story_file, 'r') as story_content:
             content = story_content.read()
-        story_content_html = markdown.markdown(content)
+        story_content_html = markdown(content)
         return story_content_html
 
     @staticmethod
