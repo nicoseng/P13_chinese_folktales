@@ -40,6 +40,51 @@ class StoryImporter:
     @staticmethod
     def update_story_table(story_list, level_table, story_table):
 
+        """
+        Compare two lists and logs the difference.
+        :param story_list: first list.
+        :param level_table
+        :param story_table: second list.
+        :return: if there is difference between both lists.
+        """
+
+        # print("story_list:", story_list)
+        # story_table_list = list(Story.objects.values('title','chinese_title',''))
+        # print("story_table_list :", story_table_list)
+        # if story_table_list == story_list:
+        #     print("pareil")
+        # else:
+        #     print("pas pareil")
+
+        # for i in story_list:
+        #     if i not in story_table_list:
+        #         print("Element différent:", i)
+        #         story_table_list.append(i)
+        #         level_id = Level.objects.get(name=i["level"])
+        #         new_story_data = Story(
+        #             level_id=level_id,
+        #             title=i["title"],
+        #             chinese_title=i["chinese_title"],
+        #             bg_image=i["bg_image"],
+        #             audiofile=i["audiofile"],
+        #             textfile=i["textfile"],
+        #             audio_bg_image=i["audio_bg_image"],
+        #             description=i["description"]
+        #         )
+        #         new_story_data.save()
+        #
+        # for j in story_table_list:
+        #     if j not in story_list:
+        #         story_table_list.remove(j)
+        #         Story.objects.get(title=j["title"]).delete()
+        #
+        # story_table = Story.objects.all()
+        # return story_table
+
+
+
+
+
         # 1. We extract each story title from story_list
         story_checklist = []
         for element in story_list:

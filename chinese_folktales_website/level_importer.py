@@ -55,45 +55,5 @@ class LevelImporter:
                 level_table_list.remove(j)
                 Level.objects.get(name=j["name"]).delete()
 
-        print("Liste nettoyée:", level_table_list)
-
-        # # 1. We extract each level from level_list
-        # level_checklist = []
-        # for element in level_list:
-        #     level_checklist.append(element["name"])
-        #
-        # level_table_checklist = []
-        # # 2. We extract each level from level_table_checklist
-        # for item in level_table_list:
-        #     level_table_checklist.append(item["name"])
-        #
-        # print("level_checklist", level_checklist)
-        # print("level_table_checklist", level_table_checklist)
-        #
-        # for element in level_checklist:
-        #     if element not in level_table_checklist:
-        #         level_data = Level(
-        #             name=element
-        #         )
-        #         level_data.save()
-        #
-        # for row in level_table:
-        #     if row.name not in level_checklist:
-        #         level_table.filter(name=row.name).delete()
-
-        # # 2. We extract each level from level_table_checklist
-        # for level in level_table_checklist:
-        #     if level["name"] not in level_checklist:
-        #         level_table.filter(name=level["name"]).delete()
-        #
-        # # 3. We check if level from level_checklist
-        # # and level from level_table_checklist both have the same content or not
-        # for element in level_checklist:
-        #     if element not in level_table_checklist:
-        #         level_data = Level(
-        #             name=element
-        #         )
-        #         level_data.save()
-        #
         level_table = Level.objects.all()
         return level_table
