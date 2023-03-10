@@ -125,6 +125,21 @@ class TestViews(TestCase):
         response = self.client.get(path)
         assert response.status_code == 200
 
+    # def test_delete_story_view(self):
+    #     self.client.login(
+    #         username="Louis",
+    #         password="lunaires"
+    #     )
+    #     path = reverse('delete_story')
+    #     favorite_story_id = 1
+    #     response = self.client.post(path, favorite_story_id)
+    #     assert response.status_code == 200
+
+        # self.client.get('delete_story/')
+        # path = reverse('delete_story')
+        # response = self.client.get(path)
+        # assert response.status_code == 302
+
     def test_info_user_view(self):
 
         self.client.login(username="Louis", password="lunaires")
