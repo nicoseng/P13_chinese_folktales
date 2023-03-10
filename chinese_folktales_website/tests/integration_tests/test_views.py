@@ -164,6 +164,7 @@ class TestViews(TestCase):
         path = reverse('update_user')
         response = self.client.get(path)
         assert response.status_code == 200
+
         new_user_data = {
             "new_username": "test",
             "new_email": "test@gmail.com"
@@ -173,7 +174,9 @@ class TestViews(TestCase):
 
     def test_submit_mail_view(self):
         self.client.login(
-            username="Louis", password="lunaires")
+            username="Louis",
+            password="lunaires"
+        )
         path = reverse('submit_mail')
         message = {
             "message": "test"

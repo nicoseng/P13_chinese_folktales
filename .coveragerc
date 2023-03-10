@@ -1,4 +1,10 @@
 [run]
-omit = chinese_folktales_app/*
-       chinese_folktales_website/tests/*
-       chinese_folktales_website/migrations/*
+omit =
+    chinese_folktales_app/*
+    chinese_folktales_website/__init__.py
+    chinese_folktales_website/apps.py
+    chinese_folktales_website/admin.py
+    */management/*
+    */migrations/*
+    */tests/*
+    manage.py
