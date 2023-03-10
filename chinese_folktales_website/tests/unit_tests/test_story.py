@@ -153,7 +153,8 @@ class TestStory(TestCase):
         test_results = self.story_imported.update_story_table(self.test_story_list, self.test_level_table, test_story_table)
         print(test_results)
         print(type(test_results))
-        expected_results = Story.objects.values()
+        expected_results = Story.objects.values('title')
+        assert test_results.values('title')[0] == expected_results[0]
 
     def test_inject_story_in_database(self):
 

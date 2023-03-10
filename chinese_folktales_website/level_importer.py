@@ -37,13 +37,10 @@ class LevelImporter:
         :return: if there is difference between both lists.
         """
 
-        print("level_list:", level_list)
         level_table_list = list(Level.objects.values('name'))
-        print("level_table_list :", level_table_list)
 
         for i in level_list:
             if i not in level_table_list:
-                print("Element différent:", i)
                 level_table_list.append(i)
                 level_data = Level(
                     name=i["name"]
