@@ -80,9 +80,3 @@ class StoryImporter:
             content = story_content.read()
         story_content_html = markdown(content)
         return story_content_html
-
-    # @staticmethod
-    # def open_audiofile(audiofile_name):
-    #     audiofile_basepath = 'https://github.com/nicoseng/P13_chinese_folktales/blob/0699a2879a5e86756c41b70cace05083a2f55e90/chinese_folktales_website/stories/audio/'
-    #     audio_file = audiofile_basepath + audiofile_name
-    #     return audio_file
