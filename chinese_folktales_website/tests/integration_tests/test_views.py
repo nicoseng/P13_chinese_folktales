@@ -168,7 +168,11 @@ class TestViews(TestCase):
         assert rec.status_code == 200
 
     def test_update_user_view(self):
-        pass
+        self.client.login(username="Louis", password="lunaires")
+        self.client.get('update_user/')
+        path = reverse('update_user')
+        response = self.client.post(path)
+        assert response.status_code == 200
 
     def test_submit_mail_view(self):
         self.client.login(
