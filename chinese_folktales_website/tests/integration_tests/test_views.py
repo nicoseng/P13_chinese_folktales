@@ -23,6 +23,22 @@ class TestViews(TestCase):
             email="louis@gmail.com",
             password="lunaires"
         )
+        self.test_level_table = Level.objects.create(
+            level_id=1,
+            name="Facile",
+        )
+
+        self.test_story_table = Story.objects.create(
+            story_id=2,
+            level_id=Level.objects.get(level_id=self.test_level_table.level_id),
+            title="Grand et petit",
+            chinese_title="大和小",
+            textfile="grand_et_petit.md",
+            audiofile="https://github.com/nicoseng/P13_chinese_folktales/raw/5017d80212878d6d19f353a9c2d95077f42fd284/chinese_folktales_website/stories/audio/grand_et_petit.mp3",
+            bg_image="https://github.com/nicoseng/P13_chinese_folktales/raw/c818cf03190b4e7bedc03ce9e5f9552e3b2ca46a/chinese_folktales_website/static/images/grand_et_petit.png",
+            audio_bg_image="",
+            description="Grand ou petit ? Venez jeter un coup d'oeil !"
+        )
 
     def test_not_authenticated_user(self):
         url = reverse('home')
@@ -73,11 +89,11 @@ class TestViews(TestCase):
         response = self.client.get(path)
         assert response.status_code == 200
 
-    # def test_stories_view(self):
-    #     self.client.get('stories/')
-    #     path = reverse('story_detail')
-    #     response = self.client.get(path)
-    #     assert response.status_code == 200
+    def test_story_detail_view(self):
+        self.client.get('stories/<int:story_id>')
+        path = reverse('story_detail', args=[self.test_story_table.story_id])
+        response = self.client.get(path)
+        assert response.status_code == 200
 
     def test_create_account_view(self):
         form = CreateUser(
