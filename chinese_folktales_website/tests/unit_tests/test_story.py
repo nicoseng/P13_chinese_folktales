@@ -4,6 +4,7 @@ from chinese_folktales_website.story_importer import StoryImporter
 from chinese_folktales_website.models import Level, Story
 from markdown import markdown
 
+
 class TestStory(TestCase):
 
     def setUp(self):
@@ -123,7 +124,7 @@ class TestStory(TestCase):
         ]
         assert expected_results == test_results
 
-    def test_update_story_table(self):
+    def test_update_story_table_1(self):
         print(self.test_level_table.level_id)
         test_story_table = Story.objects.bulk_create([
             Story(
@@ -155,6 +156,46 @@ class TestStory(TestCase):
         print(type(test_results))
         expected_results = Story.objects.values('title')
         assert test_results.values('title')[0] == expected_results[0]
+
+    # def test_update_story_table_2(self):
+    #     test_story_list = [
+    #         {
+    #             "title": "Je vois",
+    #             "chinese_title": "我看到",
+    #             "level": "Facile",
+    #             "textfile": "je_vois.md",
+    #             "audiofile": "https://github.com/nicoseng/P13_chinese_folktales/raw/0699a2879a5e86756c41b70cace05083a2f55e90/chinese_folktales_website/stories/audio/je_vois.mp3",
+    #             "bg_image": "https://github.com/nicoseng/P13_chinese_folktales/raw/c818cf03190b4e7bedc03ce9e5f9552e3b2ca46a/chinese_folktales_website/static/images/je_vois.png",
+    #             "audio_bg_image": "https://github.com/nicoseng/P13_chinese_folktales/raw/a39fa0f122829af2c3ed53e878eabaff472d6790/chinese_folktales_website/static/images/je_vois/audio_bg_image.png",
+    #             "description": "Une petite exploration dans le jardin avec une souris comme guide ? C'est par ici que ça se passe ! "
+    #         },
+    #         {
+    #             "title": "Grand et petit",
+    #             "chinese_title": "大和小",
+    #             "level": "Facile",
+    #             "textfile": "grand_et_petit.md",
+    #             "audiofile": "https://github.com/nicoseng/P13_chinese_folktales/raw/5017d80212878d6d19f353a9c2d95077f42fd284/chinese_folktales_website/stories/audio/grand_et_petit.mp3",
+    #             "bg_image": "https://github.com/nicoseng/P13_chinese_folktales/raw/c818cf03190b4e7bedc03ce9e5f9552e3b2ca46a/chinese_folktales_website/static/images/grand_et_petit.png",
+    #             "audio_bg_image": "",
+    #             "description": "Grand ou petit ? Venez jeter un coup d'oeil !"
+    #         }
+    #     ]
+    #     test_story_table = Story.objects.create(
+    #             story_id=1,
+    #             level_id=Level.objects.get(level_id=self.test_level_table.level_id),
+    #             title="Je vois",
+    #             chinese_title="我看到",
+    #             textfile="je_vois.md",
+    #             audiofile="https://github.com/nicoseng/P13_chinese_folktales/raw/0699a2879a5e86756c41b70cace05083a2f55e90/chinese_folktales_website/stories/audio/je_vois.mp3",
+    #             bg_image="https://github.com/nicoseng/P13_chinese_folktales/raw/c818cf03190b4e7bedc03ce9e5f9552e3b2ca46a/chinese_folktales_website/static/images/je_vois.png",
+    #             audio_bg_image="https://github.com/nicoseng/P13_chinese_folktales/raw/a39fa0f122829af2c3ed53e878eabaff472d6790/chinese_folktales_website/static/images/je_vois/audio_bg_image.png",
+    #             description="Une petite exploration dans le jardin avec une souris comme guide ? C'est par ici que ça se passe ! "
+    #         )
+    #     test_results = self.story_imported.update_story_table(test_story_list, self.test_level_table, test_story_table)
+    #     print(test_results)
+    #     print(type(test_results))
+    #     expected_results = Story.objects.values('title')
+    #     assert test_results.values('title')[0] == expected_results[0]
 
     def test_inject_story_in_database(self):
 

@@ -22,7 +22,7 @@
             <td>{{favorite.story_id.title}}</td>
             <td>{{favorite.story_id.chinese_title}}</td>
             <td>
-                <form method="POST" action="{% url 'delete_story' %}">
+                <form method="POST" action="{% url 'delete_story' favorite.story_id.story_id %}">
                     {% csrf_token %}
                     <input class="delete-btn" type="submit" name="supprimer_produit" value="Supprimer">
                     <input type="hidden" name="favorite_story_id"

@@ -17,9 +17,6 @@ from .models import Story, Favorite
 
 
 def home(request):
-    user = request.user
-    if user is None:
-        logout(request)
     return render(request, 'home.html')
 
 
@@ -68,16 +65,15 @@ def about(request):
 
 
 @login_required(login_url="login")
-def add_favorite(request):
+def add_favorite(request, story_id):
     # We fetch the id of the user
     current_user = request.user
     user_id = current_user.id
+    story_id = Story.objects.get(story_id=story_id).story_id
 
     if request.method == "POST":
-        story_selected = request.POST.get('story_selected')
         favorite_database = StoryInFavorite()
-        favorite_database = favorite_database.inject_story_in_favorite(story_selected, user_id)
-
+        favorite_database = favorite_database.inject_story_in_favorite(story_id, user_id)
         context = {"favorite_database": favorite_database}
         return render(request, "display_favorite.html", context)
 
@@ -86,6 +82,7 @@ def add_favorite(request):
 def display_favorite(request):
     current_user = request.user
     user_id = current_user.id
+    # user_id = User.objects.get(id=user_id)
     favorite_database = StoryInFavorite()
     favorite_database = favorite_database.retrieve_favorite_database(user_id)
 
@@ -94,11 +91,11 @@ def display_favorite(request):
 
 
 @login_required(login_url="login")
-def delete_story(request):
+def delete_story(request, story_id):
+    story_id = Story.objects.get(story_id=story_id)
     if request.method == "POST":
-        favorite_story_id = request.POST.get('favorite_story_id')
         story_deleted = StoryEliminator()
-        favorite_database = story_deleted.delete_story(favorite_story_id)
+        favorite_database = story_deleted.delete_story(story_id)
         context = {"favorite_database": favorite_database}
         return render(request, 'display_favorite.html', context)
 

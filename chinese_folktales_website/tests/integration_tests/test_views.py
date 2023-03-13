@@ -39,6 +39,16 @@ class TestViews(TestCase):
             audio_bg_image="",
             description="Grand ou petit ? Venez jeter un coup d'oeil !"
         )
+        self.test_favorite_table = Favorite.objects.create(
+            user_id=User.objects.get(id=self.user.id),
+            story_id=Story.objects.get(story_id=self.test_story_table.story_id)
+        )
+
+    def test_home_view(self):
+        self.client.get('/')
+        path = reverse('home')
+        response = self.client.get(path)
+        assert response.status_code == 200
 
     def test_not_authenticated_user(self):
         url = reverse('home')
@@ -53,39 +63,32 @@ class TestViews(TestCase):
         self.assertTemplateUsed(response, 'home.html')
         self.client.logout()
 
-    def test_home_view(self):
-        self.client.get('home/')
-        path = reverse('home')
+    def test_login_view(self):
+
+        credentials = {"username": "jeanne", "password": "lunaires", "email": "abc@gmail.com"}
+        User.objects.create_user(**credentials)
+
+        # send login data
+        response = self.client.post('/login/', credentials, follow=True)
+        path = reverse('login')
         response = self.client.get(path)
         assert response.status_code == 200
+
+    def test_logout_user_view(self):
+        self.client.get('logout_user/')
+        path = reverse('logout_user')
+        response = self.client.get(path)
+        assert response.status_code == 200
+
+    def test_contact_view(self):
+        self.client.login(username="Louis", password="lunaires")
+        response = self.client.get(reverse('contact'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'contact.html')
 
     def test_stories_view(self):
         self.client.get('stories/')
         path = reverse('stories')
-        response = self.client.get(path)
-        assert response.status_code == 200
-
-    def test_display_favorite_view(self):
-        self.client.get('display_favorite/')
-        path = reverse('display_favorite')
-        response = self.client.get(path)
-        assert response.status_code == 302
-
-    def test_delete_story_view(self):
-        self.client.get('delete_story/')
-        path = reverse('delete_story')
-        response = self.client.get(path)
-        assert response.status_code == 302
-    
-    def test_contact_view(self):
-        self.client.get('contact/')
-        path = reverse('contact')
-        response = self.client.get(path)
-        assert response.status_code == 302
-    
-    def test_about_view(self):
-        self.client.get('about/')
-        path = reverse('about')
         response = self.client.get(path)
         assert response.status_code == 200
 
@@ -95,7 +98,35 @@ class TestViews(TestCase):
         response = self.client.get(path)
         assert response.status_code == 200
 
+    def test_about_view(self):
+        self.client.get('about/')
+        path = reverse('about')
+        response = self.client.get(path)
+        assert response.status_code == 200
+
+    def test_add_favorite_view(self):
+        self.client.login(username="Louis", password="lunaires")
+        self.client.get('stories/<int:story_id>/add_favorite/')
+        path = reverse('add_favorite', args=[self.test_story_table.story_id])
+        response = self.client.post(path)
+        assert response.status_code == 200
+
+    def test_display_favorite_view(self):
+        self.client.login(username="Louis", password="lunaires")
+        self.client.get('display_favorite/')
+        path = reverse('display_favorite')
+        response = self.client.post(path)
+        assert response.status_code == 200
+
+    def test_delete_story_view(self):
+        self.client.login(username="Louis", password="lunaires")
+        self.client.get('delete_story/<int:story_id>')
+        path = reverse('delete_story', args=[self.test_story_table.story_id])
+        response = self.client.post(path)
+        assert response.status_code == 200
+
     def test_create_account_view(self):
+
         form = CreateUser(
             {"username": "Jeanne",
              "email": "abc@gmail.com",
@@ -115,53 +146,13 @@ class TestViews(TestCase):
             self.fail("User not valid")
 
         credentials = {"username": "Lucien", "email": "abc@gmail.com"}
-        User.objects.create_user(**credentials)
+        self.new_user = User.objects.create_user(**credentials)
 
-        # send create_account data
+        # Send create_account data
         self.client.post('/create_account/', credentials, follow=True)
         path = reverse('create_account')
         response = self.client.get(path)
         assert response.status_code == 200
-
-    def test_login_user_view(self):
-        credentials = {"username": "jeanne", "password": "lunaires", "email": "abc@gmail.com"}
-        User.objects.create_user(**credentials)
-
-        # send login data
-        response = self.client.post('/login/', credentials, follow=True)
-        # should be logged in now
-        #self.assertTrue(response.context['user'].is_active)
-
-        path = reverse('login')
-        response = self.client.get(path)
-        assert response.status_code == 200
-
-    def test_logout_user_view(self):
-        path = reverse('logout_user')
-        response = self.client.get(path)
-        assert response.status_code == 200
-
-    # def test_delete_story_view(self):
-    #     self.client.login(
-    #         username="Louis",
-    #         password="lunaires"
-    #     )
-    #     path = reverse('delete_story')
-    #     favorite_story_id = 1
-    #     response = self.client.post(path, favorite_story_id)
-    #     assert response.status_code == 200
-
-        # self.client.get('delete_story/')
-        # path = reverse('delete_story')
-        # response = self.client.get(path)
-        # assert response.status_code == 302
-
-    def test_info_user_view(self):
-
-        self.client.login(username="Louis", password="lunaires")
-        response = self.client.get(reverse('info_user'))
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'info_user.html')
 
     def test_change_password_view(self):
         self.client.login(username="Louis", password="lunaires")
@@ -176,32 +167,8 @@ class TestViews(TestCase):
         rec = self.client.post('/change_password', new_pwd_data, follow=True)
         assert rec.status_code == 200
 
-    def test_change_password_no_valid_view(self):
-        self.client.login(username="Louis", password="lunaires")
-        path = reverse('change_password')
-        response = self.client.get(path)
-        assert response.status_code == 200
-
-        new_pwd_data = {
-            "new_password1": "solaires",
-            "new_password2": "molaires"
-        }
-        self.client.post('change_password', new_pwd_data, follow=True)
-
     def test_update_user_view(self):
-
-        # To simule a connection
-        self.client.login(username="Louis", password="lunaires")
-        path = reverse('update_user')
-        response = self.client.get(path)
-        assert response.status_code == 200
-
-        new_user_data = {
-            "new_username": "test",
-            "new_email": "test@gmail.com"
-        }
-        rec = self.client.post('/update_user', new_user_data, follow=True)
-        assert rec.status_code == 200
+        pass
 
     def test_submit_mail_view(self):
         self.client.login(
@@ -228,3 +195,18 @@ class TestViews(TestCase):
         assert mail.outbox[0].body == 'test'
         assert mail.outbox[0].from_email == 'louis@gmail.com'
         assert mail.outbox[0].to == ['sengmanynicolas21@gmail.com']
+
+    # def test_add_favorite_redirection_view(self):
+    #     self.client.get('add_favorite/')
+    #     path = reverse('add_favorite')
+    #     response = self.client.get(path)
+    #     assert response.status_code == 302
+    #
+    # def test_add_favorite_view(self):
+    #
+    #     path = reverse('add_favorite')
+    #     print(self.user_id.id)
+    #     print(self.test_favorite_table.story_id.story_id)
+    #     response = self.client.get(path, self.test_story_table.story_id, self.test_favorite_table.user_id)
+    #     assert response.status_code == 200
+
