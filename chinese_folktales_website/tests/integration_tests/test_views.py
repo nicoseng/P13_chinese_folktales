@@ -199,18 +199,3 @@ class TestViews(TestCase):
         assert mail.outbox[0].body == 'test'
         assert mail.outbox[0].from_email == 'louis@gmail.com'
         assert mail.outbox[0].to == ['sengmanynicolas21@gmail.com']
-
-    # def test_add_favorite_redirection_view(self):
-    #     self.client.get('add_favorite/')
-    #     path = reverse('add_favorite')
-    #     response = self.client.get(path)
-    #     assert response.status_code == 302
-    #
-    # def test_add_favorite_view(self):
-    #
-    #     path = reverse('add_favorite')
-    #     print(self.user_id.id)
-    #     print(self.test_favorite_table.story_id.story_id)
-    #     response = self.client.get(path, self.test_story_table.story_id, self.test_favorite_table.user_id)
-    #     assert response.status_code == 200
-
