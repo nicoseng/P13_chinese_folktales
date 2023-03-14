@@ -4,6 +4,11 @@ python:
 os: linux
 addons:
   chrome: stable
+  postgresql: '11'
+#  apt:
+#    packages:
+#      - postgresql-11-postgis-2.5
+#      - postgresql-client-11
 
 before_install:
   - python -m pip install --upgrade pip
@@ -29,15 +34,15 @@ script:
 
   # Step 3 : Installing database
 #  - export ENV='production'
-#  - sudo -u postgres psql -c 'create user nsengmany;'
-#  - sudo -u postgres psql -c 'create database chinese_folktales_bdd;'
-#  - sudo -u postgres psql -c 'ALTER ROLE nsengmany SET client_encoding TO "utf8";'
-#  - sudo -u postgres psql -c 'ALTER ROLE nsengmany SET default_transaction_isolation TO "read committed";'
-#  - sudo -u postgres psql -c 'ALTER ROLE nsengmany SET timezone TO "Europe/Paris";'
-#  - sudo -u postgres psql -c 'ALTER ROLE nsengmany WITH SUPERUSER;'
-#  - sudo -u postgres psql -c 'GRANT ALL PRIVILEGES ON DATABASE chinese_folktales_bdd TO nsengmany;'
-#  - sudo -u postgres psql -c 'GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO nsengmany;'
-#  - sudo -u postgres psql -c '\l'
+  - sudo -u postgres psql -c 'create user nsengmany;'
+  - sudo -u postgres psql -c 'create database chinese_folktales_bdd;'
+  - sudo -u postgres psql -c 'ALTER ROLE nsengmany SET client_encoding TO "utf8";'
+  - sudo -u postgres psql -c 'ALTER ROLE nsengmany SET default_transaction_isolation TO "read committed";'
+  - sudo -u postgres psql -c 'ALTER ROLE nsengmany SET timezone TO "Europe/Paris";'
+  - sudo -u postgres psql -c 'ALTER ROLE nsengmany WITH SUPERUSER;'
+  - sudo -u postgres psql -c 'GRANT ALL PRIVILEGES ON DATABASE chinese_folktales_bdd TO nsengmany;'
+  - sudo -u postgres psql -c 'GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO nsengmany;'
+  - sudo -u postgres psql -c '\l'
 
   # Step 4 : Filling the database
   - python manage.py makemigrations
