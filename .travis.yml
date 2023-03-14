@@ -16,6 +16,7 @@ services:
 branches:
   only:
     - staging
+    - main
 
 env:
   global:
