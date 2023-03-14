@@ -35,7 +35,7 @@ script:
   - sudo -u postgres psql -c 'ALTER ROLE nsengmany SET default_transaction_isolation TO "read committed";'
   - sudo -u postgres psql -c 'ALTER ROLE nsengmany SET timezone TO "Europe/Paris";'
   - sudo -u postgres psql -c 'ALTER ROLE nsengmany WITH SUPERUSER;'
-  - sudo -u postgres psql -c 'GRANT ALL PRIVILEGES ON DATABASE ocr_p10_purbeurre_bdd TO nsengmany;'
+  - sudo -u postgres psql -c 'GRANT ALL PRIVILEGES ON DATABASE chinese_folktales_bdd TO nsengmany;'
   - sudo -u postgres psql -c 'GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO nsengmany;'
   - sudo -u postgres psql -c '\l'
 
