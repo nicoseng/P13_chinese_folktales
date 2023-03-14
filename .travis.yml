@@ -11,21 +11,21 @@ before_install:
 #install:
 ## Step 1 : Install virtual environment
 ##  - virtualenv -p python3 venv
-services:
-  - postgresql
+#services:
+#  - postgresql
 branches:
   only:
     - staging
     - main
 
-env:
-  global:
-    - PGPORT=5432
+#env:
+#  global:
+#    - PGPORT=5432
 script:
 
   # Step 2 : Installing libraries needed
   - pip install -r requirements.txt
-  - pip install six
+#  - pip install six
 
   # Step 3 : Installing database
 #  - export ENV='production'
