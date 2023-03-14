@@ -30,27 +30,27 @@ script:
   # Step 3 : Installing database
   - export ENV='production'
   - sudo -u postgres psql -c 'create user nsengmany;'
-#  - sudo -u postgres psql -c 'create database ocr_p10_purbeurre_bdd;'
-#  - sudo -u postgres psql -c 'ALTER ROLE nsengmany SET client_encoding TO "utf8";'
-#  - sudo -u postgres psql -c 'ALTER ROLE nsengmany SET default_transaction_isolation TO "read committed";'
-#  - sudo -u postgres psql -c 'ALTER ROLE nsengmany SET timezone TO "Europe/Paris";'
-#  - sudo -u postgres psql -c 'ALTER ROLE nsengmany WITH SUPERUSER;'
-#  - sudo -u postgres psql -c 'GRANT ALL PRIVILEGES ON DATABASE ocr_p10_purbeurre_bdd TO nsengmany;'
-#  - sudo -u postgres psql -c 'GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO nsengmany;'
-#  - sudo -u postgres psql -c '\l'
-#
-#  # Step 4 : Filling the database
-#  - python manage.py makemigrations
-#  - python manage.py migrate
-#  - python manage.py insert_data
-#  - python manage.py collectstatic --noinput
-#
-#  # Step 5 : Getting Chromedriver
-#
-#  - wget https://chromedriver.storage.googleapis.com/107.0.5304.62/chromedriver_linux64.zip
-#  - unzip chromedriver_linux64.zip -d /home/travis/build/nicoseng/P10_purbeurre/purbeurre_website/tests/functional_tests/
-#  - export CHROME_BIN=chromium-browser
-#
-#  # Step 6 : Testing the application
-#  - pytest
+  - sudo -u postgres psql -c 'create database chinese_folktales_bdd;'
+  - sudo -u postgres psql -c 'ALTER ROLE nsengmany SET client_encoding TO "utf8";'
+  - sudo -u postgres psql -c 'ALTER ROLE nsengmany SET default_transaction_isolation TO "read committed";'
+  - sudo -u postgres psql -c 'ALTER ROLE nsengmany SET timezone TO "Europe/Paris";'
+  - sudo -u postgres psql -c 'ALTER ROLE nsengmany WITH SUPERUSER;'
+  - sudo -u postgres psql -c 'GRANT ALL PRIVILEGES ON DATABASE ocr_p10_purbeurre_bdd TO nsengmany;'
+  - sudo -u postgres psql -c 'GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO nsengmany;'
+  - sudo -u postgres psql -c '\l'
+
+  # Step 4 : Filling the database
+  - python manage.py makemigrations
+  - python manage.py migrate
+  - python manage.py insert_data
+  - python manage.py collectstatic --noinput
+
+  # Step 5 : Getting Chromedriver
+
+  - wget https://chromedriver.storage.googleapis.com/107.0.5304.62/chromedriver_linux64.zip
+  - unzip chromedriver_linux64.zip -d /home/travis/build/nicoseng/P10_purbeurre/purbeurre_website/tests/functional_tests/
+  - export CHROME_BIN=chromium-browser
+
+  # Step 6 : Testing the application
+  - pytest
 
