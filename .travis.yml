@@ -10,7 +10,7 @@ before_install:
 
 install:
 # Step 1 : Install virtual environment
-  - virtualenv -p python3 venv
+#  - virtualenv -p python3 venv
 services:
   - postgresql
 branches:
