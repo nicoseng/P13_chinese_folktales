@@ -8,9 +8,9 @@ addons:
 before_install:
   - python -m pip install --upgrade pip
 
-install:
-# Step 1 : Install virtual environment
-#  - virtualenv -p python3 venv
+#install:
+## Step 1 : Install virtual environment
+##  - virtualenv -p python3 venv
 services:
   - postgresql
 branches:
