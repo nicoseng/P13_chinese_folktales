@@ -89,10 +89,10 @@ DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': 'chinese_folktales_bdd',
-            'USER': 'nsengmany',
+            'USER': 'postgres',
             'PASSWORD': 'a8ln17',
             'HOST': 'localhost',
-            'PORT': '5433',
+            'PORT': '5432',
         }
     }
 # else:
