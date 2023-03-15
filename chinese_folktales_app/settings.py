@@ -91,7 +91,7 @@ DATABASES = {
             'NAME': 'chinese_folktales_bdd',
             'USER': 'postgres',
             'PASSWORD': 'a8ln17',
-            'HOST': '127.0.0.1',
+            'HOST': 'localhost',
             'PORT': '5432',
         }
     }
