@@ -13,16 +13,16 @@ addons:
 before_install:
   - python -m pip install --upgrade pip
 
-#install:
-#  # Step 1 : Install virtual environment
-#  - python -m venv env
-#  - source env/bin/activate
-#services:
-#  - postgresql
-#branches:
-#  only:
-#    - staging
-#    - main
+install:
+  # Step 1 : Install virtual environment
+  - python -m venv env
+  - source env/bin/activate
+services:
+  - postgresql
+branches:
+  only:
+    - staging
+    - main
 #env:
 #  global:
 #    - PGPORT=5432
