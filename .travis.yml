@@ -27,7 +27,8 @@ branches:
 #  global:
 #    - PGPORT=5432
 before_script:
-  - psql -c 'create database test_postgres_db;' -U postgres
+  - sudo -u postgres psql -c 'create user postgres;'
+  - sudo -u postgres psql -c 'create database test_chinese_folktales_bdd;'
 #script:
 #
 #  # Step 2 : Installing libraries needed
