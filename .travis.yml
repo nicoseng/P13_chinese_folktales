@@ -26,15 +26,15 @@ branches:
 env:
   global:
     - PGPORT=5433
-before_script:
-  - sudo -u postgres psql -c 'create user nsengmany;'
-  - sudo -u postgres psql -c 'create database test_chinese_folktales_bdd;'
-#script:
+
+script:
 #
 #  # Step 2 : Installing libraries needed
 #  - pip install -r requirements.txt
 
   # Step 3 : Installing database
+  - sudo -u postgres psql -c 'create user nsengmany;'
+  - sudo -u postgres psql -c 'create database test_chinese_folktales_bdd;'
 #  - export ENV='production'
 #  - sudo -u postgres psql -c 'create user postgres;'
 #  - sudo -u postgres psql -c 'create database chinese_folktales_bdd;'
