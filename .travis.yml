@@ -25,7 +25,7 @@ branches:
     - main
 env:
   global:
-    - PGPORT=5432
+    - PGPORT=5433
 before_script:
   - sudo -u postgres psql -c 'create user nsengmany;'
   - sudo -u postgres psql -c 'create database test_chinese_folktales_bdd;'
