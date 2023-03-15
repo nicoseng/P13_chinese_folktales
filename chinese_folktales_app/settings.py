@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False if os.environ.get("ENV", "development") == "production" else True
+DEBUG = config("DEBUG")
 
 ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 
@@ -79,8 +79,7 @@ WSGI_APPLICATION = 'chinese_folktales_app.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
-if os.environ.get("ENV", "development") == "production":
-    DATABASES = {
+DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': config("DB_NAME"),
@@ -90,17 +89,17 @@ if os.environ.get("ENV", "development") == "production":
             'PORT': config("DB_PORT"),
         }
     }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'test_bdd',
-            'USER': 'nsengmany',
-            'PASSWORD': 'lunaires',
-            'HOST': '127.0.0.1',
-            'PORT': '5432',
-        }
-    }
+# else:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql',
+#             'NAME': 'test_bdd',
+#             'USER': 'nsengmany',
+#             'PASSWORD': 'lunaires',
+#             'HOST': '127.0.0.1',
+#             'PORT': '5432',
+#         }
+#     }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

@@ -4,22 +4,13 @@ python:
 os: linux
 addons:
   chrome: stable
-  postgresql: "11"
-  apt:
-    packages:
-      - postgresql-11
-      - postgresql-client-11
-env:
-  global:
-    - PGPORT=5432
-#    - PGUSER=travis
 
 before_install:
   - python -m pip install --upgrade pip
 
-#install:
-## Step 1 : Install virtual environment
-##  - virtualenv -p python3 venv
+install:
+  # Step 1 : Install virtual environment
+  - python -m venv env
 services:
   - postgresql
 branches:
@@ -27,9 +18,6 @@ branches:
     - staging
     - main
 
-#env:
-#  global:
-#    - PGPORT=5432
 script:
 
   # Step 2 : Installing libraries needed
