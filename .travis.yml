@@ -4,6 +4,12 @@ python:
 os: linux
 addons:
   chrome: stable
+  postgresql: '14'
+  apt:
+    update: true
+    packages:
+      - postgresql-14
+      - postgresql-14-postgis-3
 
 before_install:
   - python -m pip install --upgrade pip
