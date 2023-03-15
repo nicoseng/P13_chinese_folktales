@@ -20,10 +20,11 @@ class StoryImporter:
 
     @staticmethod
     def inject_story_in_database(story_list, level_table, story_table):
-
+        num_id = 1
         for element in story_list:
             level_id = Level.objects.get(name=element["level"]).level_id
             new_story_data = Story(
+                story_id=num_id,
                 level_id=Level.objects.get(level_id=level_id),
                 title=element["title"],
                 chinese_title=element["chinese_title"],
@@ -34,6 +35,7 @@ class StoryImporter:
                 description=element["description"]
             )
             new_story_data.save()
+            num_id = num_id + 1
         story_table = Story.objects.all()
         return story_table
 
@@ -47,6 +49,7 @@ class StoryImporter:
         :param story_table: second list.
         :return: if there is difference between both lists.
         """
+
         story_table_checklist = list(Story.objects.values(
             'title',
             'chinese_title',
@@ -62,12 +65,13 @@ class StoryImporter:
                     "textfile": element["textfile"]
                  }
             )
-
+        num_id = 1
         for i in story_checklist:
             if i not in story_table_checklist:
                 story_table_checklist.append(i)
                 level_id = Level.objects.get(name=i["level"])
                 new_story_data = Story(
+                    story_id=num_id,
                     level_id=level_id,
                     title=i["title"],
                     chinese_title=i["chinese_title"],
@@ -78,6 +82,7 @@ class StoryImporter:
                     description=i["description"]
                 )
                 new_story_data.save()
+                num_id = num_id + 1
 
         for j in story_table_checklist:
             if j not in story_checklist:

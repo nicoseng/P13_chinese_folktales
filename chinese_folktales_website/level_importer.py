@@ -19,11 +19,16 @@ class LevelImporter:
 
     @staticmethod
     def inject_level_in_database(level_list):
-        for element in level_list:
-            level_data = Level(
-                name=element["name"],
-            )
-            level_data.save()
+        nb_of_level = len(level_list)
+        num_id = 1
+        while num_id < nb_of_level:
+            for element in level_list:
+                level_data = Level(
+                    level_id=num_id,
+                    name=element["name"],
+                )
+                level_data.save()
+                num_id = num_id + 1
         level_table = Level.objects.all()
         return level_table
 
@@ -38,14 +43,16 @@ class LevelImporter:
         """
 
         level_table_list = list(Level.objects.values('name'))
-
+        num_id = 1
         for i in level_list:
             if i not in level_table_list:
                 level_table_list.append(i)
                 level_data = Level(
+                    level_id=num_id,
                     name=i["name"]
                 )
                 level_data.save()
+                num_id = num_id + 1
 
         for j in level_table_list:
             if j not in level_list:
