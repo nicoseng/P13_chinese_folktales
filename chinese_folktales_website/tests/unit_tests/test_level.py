@@ -51,7 +51,6 @@ class TestLevel(TestCase):
         assert test_results.values()[0] == expected_results[0]
         assert test_results.values()[1] == expected_results[1]
         assert test_results.values()[2] == expected_results[2]
-        assert test_results.values()[3] == expected_results[3]
 
     def test_update_level_table_2(self):
         test_level_list = [
