@@ -4,13 +4,19 @@ python:
 os: linux
 addons:
   chrome: stable
+  postgresql: "11"
+  apt:
+    packages:
+      - postgresql-11
+      - postgresql-client-11
 
 before_install:
   - python -m pip install --upgrade pip
 
 install:
   # Step 1 : Install virtual environment
-  - python -m venv env
+  - python -m venv venv
+  - source venv/bin/activate
 services:
   - postgresql
 branches:
@@ -27,7 +33,7 @@ script:
 
   # Step 3 : Installing database
 #  - export ENV='production'
-  - sudo -u postgres psql -c 'create user postgres;'
+#  - sudo -u postgres psql -c 'create user postgres;'
   - sudo -u postgres psql -c 'create database chinese_folktales_bdd;'
   - sudo -u postgres psql -c 'ALTER ROLE postgres SET client_encoding TO "utf8";'
   - sudo -u postgres psql -c 'ALTER ROLE postgres SET default_transaction_isolation TO "read committed";'
