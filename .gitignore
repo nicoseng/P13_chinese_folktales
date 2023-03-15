@@ -1,5 +1,5 @@
 htmlcov
-chinese_folktales/.env
+.env
 .pytest_cache
 chinese_folktales_app/.pytest_cache
 venv
