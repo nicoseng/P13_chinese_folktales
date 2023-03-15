@@ -56,7 +56,7 @@ script:
 #  # Step 4 : Filling the database
   - python manage.py makemigrations
   - python manage.py migrate
-  - python manage.py insert_data
+#  - python manage.py insert_data
 ##  - python manage.py collectstatic --noinput
 #
 #  # Step 5 : Getting Chromedriver
