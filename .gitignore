@@ -3,7 +3,7 @@ htmlcov
 .pytest_cache
 chinese_folktales_app/.pytest_cache
 venv
-chinese_folktales/chinese_folktales_website/tests/functional_tests/chromedriver
+chinese_folktales_website/tests/functional_tests/chromedriver
 __pycache__
 db.sqlite3
 
