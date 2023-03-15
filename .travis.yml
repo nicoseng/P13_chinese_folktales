@@ -28,9 +28,9 @@ env:
     - PGPORT=5433
 
 script:
-#
-#  # Step 2 : Installing libraries needed
-#  - pip install -r requirements.txt
+
+  # Step 2 : Installing libraries needed
+  - pip install -r requirements.txt
 
   # Step 3 : Installing database
   - sudo -u postgres psql -c 'create user nsengmany;'
