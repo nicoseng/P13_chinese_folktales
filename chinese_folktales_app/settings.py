@@ -88,11 +88,11 @@ WSGI_APPLICATION = 'chinese_folktales_app.wsgi.application'
 DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': env("DB_NAME"),
-            'USER': env("DB_USER"),
-            'PASSWORD': env("DB_PASSWORD"),
-            'HOST': env("DB_HOST"),
-            'PORT': env("DB_PORT"),
+            'NAME': 'chinese_folktales_bdd',
+            'USER': 'postgres',
+            'PASSWORD': 'a8ln17',
+            'HOST': '127.0.0.1',
+            'PORT': '5432',
         }
     }
 # else:
