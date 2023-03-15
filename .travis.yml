@@ -25,7 +25,7 @@ script:
 
   # Step 3 : Installing database
 #  - export ENV='production'
-  - sudo -u postgres psql -c 'create user nsengmany;'
+  - sudo -u postgres psql -c 'create user postgres;'
   - sudo -u postgres psql -c 'create database chinese_folktales_bdd;'
   - sudo -u postgres psql -c 'ALTER ROLE nsengmany SET client_encoding TO "utf8";'
   - sudo -u postgres psql -c 'ALTER ROLE nsengmany SET default_transaction_isolation TO "read committed";'
