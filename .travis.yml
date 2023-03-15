@@ -17,7 +17,9 @@ branches:
   only:
     - staging
     - main
-
+env:
+  global:
+    - PGPORT=5432
 script:
 
   # Step 2 : Installing libraries needed
