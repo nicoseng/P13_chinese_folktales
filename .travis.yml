@@ -4,12 +4,6 @@ python:
 os: linux
 addons:
   chrome: stable
-  postgresql: '13'
-  apt:
-    update: true
-    packages:
-      - postgresql-13
-      - postgresql-13-postgis-3
 
 before_install:
   - python -m pip install --upgrade pip
@@ -26,36 +20,36 @@ branches:
 
 env:
   global:
-    - PGPORT=5433
+    - PGPORT=5432
 script:
 
   # Step 2 : Installing libraries needed
   - pip install -r requirements.txt
 
-#  # Step 3 : Installing database
-##  - export ENV='production'
-#  - sudo -u postgres psql -c 'create user nsengmany;'
-#  - sudo -u postgres psql -c 'create database chinese_folktales_bdd;'
-#  - sudo -u postgres psql -c 'ALTER ROLE nsengmany SET client_encoding TO "utf8";'
-#  - sudo -u postgres psql -c 'ALTER ROLE nsengmany SET default_transaction_isolation TO "read committed";'
-#  - sudo -u postgres psql -c 'ALTER ROLE nsengmany SET timezone TO "Europe/Paris";'
-#  - sudo -u postgres psql -c 'ALTER ROLE nsengmany WITH SUPERUSER;'
-#  - sudo -u postgres psql -c 'GRANT ALL PRIVILEGES ON DATABASE chinese_folktales_bdd TO nsengmany;'
-#  - sudo -u postgres psql -c 'GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO nsengmany;'
-#  - sudo -u postgres psql -c '\l'
-#
-#  # Step 4 : Filling the database
-#  - python manage.py makemigrations
-#  - python manage.py migrate
-#  - python manage.py insert_data
-##  - python manage.py collectstatic --noinput
-#
-#  # Step 5 : Getting Chromedriver
-#
-#  - wget https://chromedriver.storage.googleapis.com/111.0.5563.64/chromedriver_linux64.zip
-#  - unzip chromedriver_linux64.zip -d /Users/nicolassengmany/Desktop/OCR/Python/Projets/P13/chinese_folktales/chinese_folktales_website/tests/functional_tests/
-#  - export CHROME_BIN=chromium-browser
-#
-#  # Step 6 : Testing the application
-#  - pytest
+  # Step 3 : Installing database
+#  - export ENV='production'
+  - sudo -u postgres psql -c 'create user nsengmany;'
+  - sudo -u postgres psql -c 'create database chinese_folktales_bdd;'
+  - sudo -u postgres psql -c 'ALTER ROLE nsengmany SET client_encoding TO "utf8";'
+  - sudo -u postgres psql -c 'ALTER ROLE nsengmany SET default_transaction_isolation TO "read committed";'
+  - sudo -u postgres psql -c 'ALTER ROLE nsengmany SET timezone TO "Europe/Paris";'
+  - sudo -u postgres psql -c 'ALTER ROLE nsengmany WITH SUPERUSER;'
+  - sudo -u postgres psql -c 'GRANT ALL PRIVILEGES ON DATABASE chinese_folktales_bdd TO nsengmany;'
+  - sudo -u postgres psql -c 'GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO nsengmany;'
+  - sudo -u postgres psql -c '\l'
+
+  # Step 4 : Filling the database
+  - python manage.py makemigrations
+  - python manage.py migrate
+  - python manage.py insert_data
+#  - python manage.py collectstatic --noinput
+
+  # Step 5 : Getting Chromedriver
+
+  - wget https://chromedriver.storage.googleapis.com/111.0.5563.64/chromedriver_linux64.zip
+  - unzip chromedriver_linux64.zip -d /Users/nicolassengmany/Desktop/OCR/Python/Projets/P13/chinese_folktales/chinese_folktales_website/tests/functional_tests/
+  - export CHROME_BIN=chromium-browser
+
+  # Step 6 : Testing the application
+  - pytest
 
