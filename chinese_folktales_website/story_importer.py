@@ -94,6 +94,7 @@ class StoryImporter:
 
     @staticmethod
     def open_textfile(textfile_name):
+
         textfile_basepath = '/Users/nicolassengmany/Desktop/OCR/Python/Projets/P13/chinese_folktales/chinese_folktales_website/stories/texts/'
         story_file = textfile_basepath + textfile_name
 

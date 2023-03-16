@@ -21,13 +21,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-g!9^3)(6(d6%bh*x*%1uqj#90nfdx7bvqmxy#4y@=^e60@sj3k'
+SECRET_KEY = config('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1"]
+ALLOWED_HOSTS = ["127.0.0.1", "206.189.127.39"]
 
 # Application definition
 
@@ -135,6 +135,19 @@ USE_TZ = True
 # STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 STATIC_URL = '/static/'
 
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/4.1/howto/static-files/
+if os.environ.get("ENV", "development") == "production":
+    STATIC_URL = '/static/'
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'chinese_folktales_website/static'), ]
+    STATIC_ROOT = os.path.join(BASE_DIR, '../P13_chinese_folktales/staticfiles')
+    MEDIA_URL = '/images/'
+
+else:
+    STATIC_URL = 'static/'
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'chinese_folktales_website/static'), ]
+    STATIC_ROOT = os.path.join(BASE_DIR, '../chinese_folktales/staticfiles')
+    MEDIA_URL = '/images/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
