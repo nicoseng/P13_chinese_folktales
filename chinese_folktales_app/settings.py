@@ -143,6 +143,20 @@ USE_TZ = True
 # STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 STATIC_URL = '/static/'
 
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/4.1/howto/static-files/
+if os.environ.get("ENV", "development") == "production":
+    STATIC_URL = '/static/'
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'chinese_folktales_website/static'), ]
+    STATIC_ROOT = os.path.join(BASE_DIR, '../P13_chinese_folktales/staticfiles')
+    MEDIA_URL = '/images/'
+
+else:
+    STATIC_URL = 'static/'
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'chinese_folktales_website/static'), ]
+    STATIC_ROOT = os.path.join(BASE_DIR, '../chinese_folktales/staticfiles')
+    MEDIA_URL = '/images/'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 

@@ -22,7 +22,7 @@ services:
 branches:
   only:
     - staging
-    - main
+#    - main
 env:
   global:
     - PGPORT=5432
