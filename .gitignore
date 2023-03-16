@@ -6,4 +6,4 @@ venv
 chinese_folktales_website/tests/functional_tests/chromedriver
 __pycache__
 db.sqlite3
-
+staticfiles
