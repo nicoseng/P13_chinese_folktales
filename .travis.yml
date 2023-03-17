@@ -24,7 +24,7 @@ branches:
 #    - main
 env:
   global:
-    - PGPORT=5432
+    - PGPORT=5433
 script:
 
   # Step 2 : Installing libraries needed
