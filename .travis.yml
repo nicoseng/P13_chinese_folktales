@@ -16,7 +16,6 @@ before_install:
 install:
   # Step 1 : Install virtual environment
   - python -m venv env
-  - source env/bin/activate
 services:
   - postgresql
 branches:
