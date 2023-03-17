@@ -82,7 +82,7 @@ if os.environ.get("ENV", "development") == "production":
             'ENGINE': 'django.db.backends.postgresql',
             'NAME': 'ocr_chinese_folktales_bdd',
             'USER': 'nsengmany',
-            'PASSWORD': 'lunaires',
+            'PASSWORD': 'a8ln17',
             'HOST': 'localhost',
             'PORT': '5433',
         }
