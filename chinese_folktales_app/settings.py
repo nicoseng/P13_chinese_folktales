@@ -81,10 +81,10 @@ if os.environ.get("ENV", "development") == "production":
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
             'NAME': 'ocr_chinese_folktales_bdd',
-            'USER': 'nsengmany',
-            'PASSWORD': 'lunaires',
-            'HOST': 'localhost',
-            'PORT': '5433',
+            'USER': 'postgres',
+            'PASSWORD': 'a8ln17',
+            'HOST': '127.0.0.1',
+            'PORT': '5432',
         }
     }
 
