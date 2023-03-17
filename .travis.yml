@@ -34,7 +34,7 @@ script:
 
   - export ENV='production'
 #  - sudo -u postgres psql -c 'create user nsengmany;'
-  - sudo -u postgres psql -c 'create database ocr_chinese_folktales_bdd;'
+#  - sudo -u postgres psql -c 'create database ocr_chinese_folktales_bdd;'
 #  - sudo -u postgres psql -c 'ALTER ROLE postgres SET client_encoding TO "utf8";'
 #  - sudo -u postgres psql -c 'ALTER ROLE postgres SET default_transaction_isolation TO "read committed";'
 #  - sudo -u postgres psql -c 'ALTER ROLE postgres SET timezone TO "Europe/Paris";'
