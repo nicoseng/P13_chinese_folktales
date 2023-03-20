@@ -1,6 +1,6 @@
 # P13_chinese_folktales
 
-# Projet P13 : Projet final : prêt pour le feu d'artifice !
+# Projet P13 : Projet final : prêt pour le feu d'artifice ?
 
 Code source : https://github.com/nicoseng/P13_chinese_folktales
 Programme rédigé sous Python3. Projet sous Virtual Env et Git 
