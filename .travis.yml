@@ -22,10 +22,10 @@ branches:
     - staging
 env:
   global:
-    - PGPORT=5432
+    - PGPORT=5433
     - PGDATABASE=ocr_chinese_folktales_bdd
     - PGUSER=postgres
-    - PGPASSWORD=''
+    - PGPASSWORD='a8ln17'
     - PGHOST=localhost
 script:
 
