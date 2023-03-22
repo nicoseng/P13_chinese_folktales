@@ -83,8 +83,8 @@ if os.environ.get("ENV", "development") == "production":
             'NAME': 'ocr_chinese_folktales_bdd',
             'USER': 'nsengmany',
             'PASSWORD': 'a8ln17',
-            'HOST': '206.189.127.39',
-            'PORT': '5432',
+            'HOST': 'localhost',
+            'PORT': '5433',
         }
     }
 
