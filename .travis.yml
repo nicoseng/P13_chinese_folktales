@@ -4,10 +4,10 @@ python:
 os: linux
 addons:
   chrome: stable
-  postgresql: '13'
+  postgresql: '11'
   apt:
     packages:
-    - postgresql-13
+    - postgresql-11
 
 before_install:
   - python -m pip install --upgrade pip
@@ -22,7 +22,7 @@ branches:
     - staging
 env:
   global:
-    - DB_PORT=5432
+    - DB_PORT=5433
     - DB_NAME=chinese_folktales_bdd
     - DB_USER=postgres
     - DB_PASSWORD='a8ln17'
