@@ -22,11 +22,11 @@ branches:
     - staging
 env:
   global:
-    - PGPORT=5433
-    - PGDATABASE=chinese_folktales_bdd
-    - PGUSER=postgres
-    - PGPASSWORD='a8ln17'
-    - PGHOST=localhost
+    - DB_PORT=5433
+    - DB_NAME=chinese_folktales_bdd
+    - DB_USER=postgres
+    - DB_PASSWORD='a8ln17'
+    - DB_HOST=localhost
 script:
 
   # Step 2 : Installing libraries needed
