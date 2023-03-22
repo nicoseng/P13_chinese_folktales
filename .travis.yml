@@ -22,8 +22,8 @@ branches:
     - staging
 env:
   global:
-    - PGPORT=5433
-    - PGDATABASE=ocr_chinese_folktales_bdd
+    - PGPORT=5432
+    - PGDATABASE=chinese_folktales_bdd
     - PGUSER=postgres
     - PGPASSWORD='a8ln17'
     - PGHOST=localhost
@@ -34,7 +34,7 @@ script:
 
   # Step 3 : Installing database
 
-  - export ENV='production'
+#  - export ENV='production'
 #  - sudo -u postgres psql -c 'create user nsengmany;'
 #  - sudo -u postgres psql -c 'create database ocr_chinese_folktales_bdd;'
 #  - sudo -u postgres psql -c 'ALTER ROLE postgres SET client_encoding TO "utf8";'
