@@ -22,7 +22,7 @@ branches:
     - staging
 env:
   global:
-    - DB_PORT=5433
+    - DB_PORT=5432
     - DB_NAME=chinese_folktales_bdd
     - DB_USER=postgres
     - DB_PASSWORD='a8ln17'

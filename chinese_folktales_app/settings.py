@@ -84,7 +84,7 @@ if os.environ.get("ENV", "development") == "production":
             'USER': 'postgres',
             'PASSWORD': 'a8ln17',
             'HOST': 'localhost',
-            'PORT': '5433',
+            'PORT': '5432',
         }
     }
 
