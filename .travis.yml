@@ -4,10 +4,10 @@ python:
 os: linux
 addons:
   chrome: stable
-  postgresql: '15'
+  postgresql: '13'
   apt:
     packages:
-    - postgresql-15
+    - postgresql-13
 
 before_install:
   - python -m pip install --upgrade pip
