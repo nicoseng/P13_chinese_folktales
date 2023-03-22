@@ -4,11 +4,11 @@ python:
 os: linux
 addons:
   chrome: stable
-  postgresql: "11"
+  postgresql: "14"
   apt:
     packages:
-      - postgresql-11
-      - postgresql-client-11
+      - postgresql-14
+      - postgresql-client-14
 
 before_install:
   - python -m pip install --upgrade pip
