@@ -84,7 +84,7 @@ if os.environ.get("ENV", "development") == "production":
             'USER': 'nsengmany',
             'PASSWORD': 'a8ln17',
             'HOST': '206.189.127.39',
-            'PORT': '5433',
+            'PORT': '5432',
         }
     }
 
