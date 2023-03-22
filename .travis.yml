@@ -68,4 +68,3 @@ script:
 #
 #  # Step 6 : Testing the application
 #  - pytest
-
